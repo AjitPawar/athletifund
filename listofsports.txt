@@ -1,0 +1,29 @@
+archery
+badminton
+baseball
+basketball
+boxing
+cricket
+cycling
+dance
+dodgeball
+figure skating
+floor hockey
+football
+frisbee
+gymnastics
+handball
+ice hockey
+judo
+karate
+lacrosse
+rock climbing
+rugby
+soccer
+softball
+t-ball
+table tennis
+taekwondo
+tennis
+volleyball
+wrestling
