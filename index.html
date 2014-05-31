@@ -1,10 +1,103 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>AthletiFund</title>
+		<meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="css/styles.css" rel="stylesheet">
+	</head>
+	<body>
 
-<head>
-</head>
 
-<body>
-	Hello Sweet World!!!
-</body>
 
+<div class="navbar navbar-custom navbar-fixed-top">
+ <div class="navbar-header"><a class="navbar-brand" href="#">AthletiFund</a>
+      <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="#">Sponsor</a></li>
+        <li><a href="#">Sign Up</a></li>
+        <li>&nbsp;</li>
+      </ul>
+      <form class="navbar-form">
+        <div class="form-group" style="display:inline;">
+          <div class="input-group">
+            <div class="input-group-btn">
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-chevron-down"></span></button>
+              <ul class="dropdown-menu">
+                <li><a href="#">Basketball</a></li>
+                <li><a href="#">Hockey</a></li>
+                <li><a href="#">Soccer</a></li>
+                <li><a href="#">Football</a></li>
+              </ul>
+            </div>
+            <input type="text" class="form-control" placeholder="What are you searching for?">
+            <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span> </span>
+          </div>
+        </div>
+      </form>
+    </div>
+</div>
+
+<div id="map-canvas"></div>
+<div class="container-fluid" id="main">
+  <div class="row">
+    <div class="col-xs-8" id="left">
+    
+      <h2>Welcome to AthletiFund</h2>
+      
+      <!-- item list -->
+      <div class="panel panel-default">
+        <div class="panel-heading"><a href="">Rec Centre #1</a></div>
+      </div>
+      <p>This rec centre is the bomb!</p>
+      
+      <hr>
+      
+      <div class="panel panel-default">
+        <div class="panel-heading"><a href="">Rec Centre #2</a></div>
+      </div>
+      <p>This rec centre is pretty cool</p>
+      
+      <hr>
+      
+      <div class="panel panel-default">
+        <div class="panel-heading"><a href="">Item heading</a></div>
+      </div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
+        Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
+        dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
+        Aliquam in felis sit amet augue.</p>
+      
+      <hr>
+      <!-- /item list -->
+        
+      <hr>      
+
+    </div>
+    <div class="col-xs-4"><!--map-canvas will be postioned here--></div>
+    
+  </div>
+</div>
+
+
+
+
+	<!-- script references -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="http://maps.googleapis.com/maps/api/js?sensor=false&extension=.js&output=embed"></script>
+		<script src="js/scripts.js"></script>
+	</body>
 </html>
