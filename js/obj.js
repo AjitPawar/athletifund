@@ -119,8 +119,45 @@ function search(searchText) {
 	}
 
 
+var person1 = {name:"A", age:10, gender:"F", income:3.50, sportsInterests:["Basketball", "Rugby"], 
+	photo:"somegirl.jpg", description:"I'm some girl", isManager:0, teams=[], email:"hi@bye.com", phone:"4152232211",
+	requests:[]};
+
+var person2 = {name:"B", age:12, gender:"F", income:1000, sportsInterests:["Dance", "Rugby"], 
+	photo:"somegirl2.jpg", description:"I'm some girl also", isManager:1, teams=[], email:"hello@bye.com", phone:"1231231233",
+	requests:[]};
+
+var team1 = {teamName:"Preteen Girls' Rugby", ageRange:(9,13), gender:"F", maxEnrollment:25,
+ teamManager:person2, minEntryFee:25, homeRec:"recreationcentre1", description:"small people. violent sports.",
+  photo:"rage.jpg", mailingList:["generous@bye.com"],	contactEmail:"hello@bye.com", sports:"Rugby", members:[person1,person2]};
+
+person1.teams.push(team1);
+person2.teams.push(team1);
+
+var person3 = {name:"C", age:15, gender:"M", income:3.50, sportsInterests:["Basketball"], 
+	photo:"C.jpg", description:"nice guy", isManager:0, teams:[], email:"C@bye.com", phone:"4152232211",
+	requests:[]};
+
+var person4 = {name:"D", age:16, gender:"F", income:3.50, sportsInterests:["Basketball"], 
+	photo:"D.jpg", description:"kool guy", isManager:1, teams:[], email:"D@bye.com", phone:"1111111111",
+	requests:[]};
+
+var person5 = {name:"E", age:16, gender:"M", income:3.50, sportsInterests:["Basketball"], 
+	photo:"E.jpg", description:"dude guy", isManager:0, teams:[], email:"E@bye.com", phone:"2222222222",
+	requests:[]};
+
+var person6 = {name:"F", age:18, gender:"M", income:3.50, sportsInterests:["Basketball"], 
+	photo:"F.jpg", description:"hi guy", isManager:0, teams:[], email:"F@bye.com", phone:"3333333333",
+	requests:[]};
 
 
+var team2 = {teamName:"Dancing Queens", ageRange:(15,18), gender:"N", maxEnrollment:3, teamManager:person4,
+	minEntryFee:5, homeRec:"recplace", description:"sparkley", photo:"teamsportz.jpg", mailingList:["cashmoney@bye.com"],
+	contactEmail:"D@bye.com", sports:["Dance","Gymnastics"], members:[person3, person4, person5]};
+		
+person3.teams.push(team2);
+person4.teams.push(team2);
+person5.teams.push(team2);
 
-
-	
+var req1 = {666, "14-06-2014", 0, ["cashmoney@bye.com"], "Kool Guy"};
+var req2 = {40, "30-08-2014", 0, ["generous@bye.com"], "Mr. Man"};
