@@ -84,11 +84,15 @@ function fundRequest(request, donationAmount, donorName, donorEmail) {
 	request.donorList.push(donorName);
 	if (soFar >= amount) {
 		request.isFunded = 1;
-		// email donors!	
+		emailDonorsAboutSuccess(request);
+		alert("You did it- that was the final push! Your support in bettering your community " +
+		"will be appreciated.");
 		}
 	}
 	
-
+function emailDonorsAboutSuccess(request){
+	//send grid here
+	}
 	
 
 
