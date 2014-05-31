@@ -1,6 +1,8 @@
 var SPORTLIST = ["Archery", "Badminton", "Baseball", "Basketball", "Dance", "Dodgeball", "Floor hockey",
 					"Football", "Frisbee", "Gymnastics", "Judo", "Karate", "Lacrosse", "Rugby", "Soccer",
 					"Table tennis", "Taekwondo", "Tennis", "Volleyball", "Wrestling"];
+var PEOPLE = [];
+var TEAMS = [];
 
 function Person(name, age, gender, address, income, sportsInterests, photo,
 	description, isManager, email, phone, requests) {
@@ -89,11 +91,32 @@ function fundRequest(request, donationAmount, donorName, donorEmail) {
 		"will be appreciated.");
 		}
 	}
-	
-function emailDonorsAboutSuccess(request){
-	//send grid here
+
+function search(searchText) {
+	//searches team names, people names, team sport keywords, people sport keywords 
+	var results = [];
+	for (var team in TEAMS) {
+		if (team.teamName.search(searchText) > -1) {
+			results.push(team);
+			}
+		for (var keyword in team.sports) {
+			if (keyword.search(searchText) > -1) {
+				results.push(team);
+				}
+			}
+		}
+		
+	for (var person in PEOPLE) {
+		if (person.name.search(searchText) > -1) {
+			results.push(person);
+			}
+		for (var keyword in person.sportsInterests) {
+			if (keyword.search(searchText) > -1) {
+				results.push(person);
+				}
+			}
+		}
 	}
-	
 
 
 
