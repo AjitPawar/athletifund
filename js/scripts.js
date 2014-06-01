@@ -43,20 +43,40 @@ function success(position) {
         markers = [];
         var bounds = new google.maps.LatLngBounds();
         for (var i = 0, place; place = places[i]; i++) {
-            var image = {
-                url: place.icon,
-                size: new google.maps.Size(71, 71),
-                origin: new google.maps.Point(0, 0),
-                anchor: new google.maps.Point(17, 34),
-                scaledSize: new google.maps.Size(25, 25)
-            };
+            var contentString = '<div id="content">'+
+                                '<div id="siteNotice">'+
+                                '</div>'+
+                                '<h1 id="firstHeading" class="firstHeading">Uluru</h1>'+
+                                '<div id="bodyContent">'+
+                                '<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
+                                '</div>'+
+                                '</div>';
+
+            var infowindow = new google.maps.InfoWindow({
+                content: contentString
+            });
+            // var image = {
+            //     url: place.icon,
+            //     size: new google.maps.Size(71, 71),
+            //     origin: new google.maps.Point(0, 0),
+            //     anchor: new google.maps.Point(17, 34),
+            //     scaledSize: new google.maps.Size(25, 25)
+            // };
             // Create a marker for each place.
             var marker = new google.maps.Marker({
                 map: map,
-                icon: image,
+                //icon: image,
                 title: place.name,
                 position: place.geometry.location
             });
+
+            google.maps.event.addListener(marker, 'click', function() {
+                infowindow.setContent(contentString);
+                infowindow.open(map, this);
+            });
+            // google.maps.event.addListener(marker, 'click', function() {
+            //     infowindow.open(map,marker);
+            // });
             markers.push(marker);
             bounds.extend(place.geometry.location);
         }
