@@ -32,44 +32,35 @@
       buttons: {
         "Create an account": function() {
           
-          var name = $( "#name" ),
-            age = $( "#age" ),
-            gender = $( "#gender" ),
+          var name = $( "#name" ).val(),
+            age = $( "#age" ).val(),
+            gender = $( "#gender" ).val(),
             zipcode = $( "#zipcode" ).val(),
-            income = $( "#income" ),
-            description = $( "#description" ),
-            isManager = false,
-            email = $( "#email" ),
-            phone = $( "#phone" ),
+            income = $( "#income" ).val(),
+            description = $( "#description" ).val(),
+            isManager = 0,
+            email = $( "#email" ).val(),
+            phone = $( "#phone" ).val(),
             interest = $('#interests :selected').text();   
 
+            var e = [];
+            e.push(interest);
+
+            
             if($('#checkbox').is(':checked')){
-              isManager = true;
+              isManager = 1;
               team = $('#newTeam').val();   
+              var p = new Team(team,null,null,10,null,120,zipcode,description,null,null,null,e,null);
+              TEAMS.push(p)
             } 
-            else team = $('#teams :selected').text();   
-
-
-            // Create new user object
-            var url = 'http://geocoder.ca/?postal=' + zipcode + '&geoit=xml&topmatches=5';
-            $.ajax({
-                type: "GET",
-                url: url,
-                cache: false,
-                dataType: "xml",
-                success: function(xml) {
-                /*$(xml).find('geodata').each(function(){
-                    $(this).find("latt").each(function(){
-                        var latt = $(this).text();
-                        console.log(zipcode);
-                        console.log(latt);
-                    });
-                  });
-               }*/
-
-               console.log(xml);
-             }
-            });
+            else {
+              team = $('#teams :selected').text();   
+              var p = new Person(name,age,gender,zipcode,income,e,"img/D.jpg",description,isManager,email,phone,e);
+              PEOPLE.push(p);              
+            }
+            
+            console.log(PEOPLE);
+            console.log(TEAMS);
 
 
         },
@@ -108,8 +99,8 @@
     <input type="text" name="zipcode" id="zipcode" class="text ui-widget-content ui-corner-all">
     <label for="income">Income</label>
     <input type="text" name="income" id="income" class="text ui-widget-content ui-corner-all">
-    <label for="photo">Photo</label>
-    <input type="text" name="photo" id="photo" class="text ui-widget-content ui-corner-all">
+    <!--<label for="photo">Photo</label>
+    <input type="text" name="photo" id="photo" class="text ui-widget-content ui-corner-all">-->
     <label for="description">Description</label>
     <input type="text" name="description" id="description" class="text ui-widget-content ui-corner-all">
     <label for="email">Email</label>
@@ -140,7 +131,7 @@
     <select id="interests">
       <option></option>
       <script>
-          for(i=0; i<SPORTLIST.length; i++) {  
+          for(var i=0; i<SPORTLIST.length; i++) {  
               document.write('<option value="' + SPORTLIST[i] +'">' + SPORTLIST[i] + '</option>');
           }
       </script>
@@ -153,7 +144,7 @@
       <select id="teams">
         <option></option>
         <script>
-            for(i=0; i<TEAMS.length; i++) {  
+            for(var i=0; i<TEAMS.length; i++) {  
                 document.write('<option value="' + TEAMS[i].teamName +'">' + TEAMS[i].teamName + '</option>');
             }
         </script>
