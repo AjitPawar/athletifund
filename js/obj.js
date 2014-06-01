@@ -32,7 +32,8 @@ function Person(name, age, gender, zipcode, income, sportsInterests, photo,
 	}
 
 	
-function Request(amount, endDate, isFunded, mailingList, donorList) {
+function Request(requester, amount, endDate, isFunded, mailingList, donorList) {
+	this.requester = requester;
 	this.amount = amount;
 	this.sofar = 0;
 	this.endDate = endDate;
@@ -56,6 +57,7 @@ function Team(teamName, ageRange, gender, maxEnrollment, teamManager, minEntryFe
 	this.contactEmail = contactEmail; //email of teamManager
 	this.sports = sports; //list of keywords from SPORTLIST
 	this.members = []; //list of Person objects
+	this.requests = [];
 	}
 
 function addMember(team, newMember) {
