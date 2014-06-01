@@ -52,6 +52,7 @@ body {
     height:100%;
     width:30.00000%;
     float:right;
+    padding-right: 5px;
 }
 
 #map-canvas {
