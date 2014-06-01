@@ -23,50 +23,6 @@
 
   <script>
   $(function() {
-    var name = $( "#name" ),
-      age = $( "#age" ),
-      gender = $( "#gender" ),
-      address = $( "#address" ),
-      income = $( "#income" ),
-      description = $( "#description" ),
-      isManager = $( "#isManager" ),
-      email = $( "#email" ),
-      phone = $( "#phone" ),
-      isManager = $(".messageCheckbox").is(":checked"),
-      interests = $('#interests :selected').text(),
-      teams = $('#teams :selected').text();
-      //allFields = $( [] ).add( name ).add( email ).add( password ),
-      //tips = $( ".validateTips" );
- 
-    function updateTips( t ) {
-      tips
-        .text( t )
-        .addClass( "ui-state-highlight" );
-      setTimeout(function() {
-        tips.removeClass( "ui-state-highlight", 1500 );
-      }, 500 );
-    }
- 
-    function checkLength( o, n, min, max ) {
-      if ( o.val().length > max || o.val().length < min ) {
-        o.addClass( "ui-state-error" );
-        updateTips( "Length of " + n + " must be between " +
-          min + " and " + max + "." );
-        return false;
-      } else {
-        return true;
-      }
-    }
- 
-    function checkRegexp( o, regexp, n ) {
-      if ( !( regexp.test( o.val() ) ) ) {
-        o.addClass( "ui-state-error" );
-        updateTips( n );
-        return false;
-      } else {
-        return true;
-      }
-    }
  
     $( "#dialog-form" ).dialog({
       autoOpen: false,
@@ -76,7 +32,45 @@
       buttons: {
         "Create an account": function() {
           
-          
+          var name = $( "#name" ),
+            age = $( "#age" ),
+            gender = $( "#gender" ),
+            zipcode = $( "#zipcode" ).val(),
+            income = $( "#income" ),
+            description = $( "#description" ),
+            isManager = false,
+            email = $( "#email" ),
+            phone = $( "#phone" ),
+            interest = $('#interests :selected').text();   
+
+            if($('#checkbox').is(':checked')){
+              isManager = true;
+              team = $('#newTeam').val();   
+            } 
+            else team = $('#teams :selected').text();   
+
+
+            // Create new user object
+            var url = 'http://geocoder.ca/?postal=' + zipcode + '&geoit=xml&topmatches=5';
+            $.ajax({
+                type: "GET",
+                url: url,
+                cache: false,
+                dataType: "xml",
+                success: function(xml) {
+                /*$(xml).find('geodata').each(function(){
+                    $(this).find("latt").each(function(){
+                        var latt = $(this).text();
+                        console.log(zipcode);
+                        console.log(latt);
+                    });
+                  });
+               }*/
+
+               console.log(xml);
+             }
+            });
+
 
         },
         Cancel: function() {
@@ -88,12 +82,14 @@
       }
     });
  
+
     $( "#create-user" )
-      .button()
-      .click(function() {
+      .button().click(function() {
         $( "#dialog-form" ).dialog( "open" );
       });
+
   });
+
   </script>
 </head>
 <body>
@@ -108,8 +104,8 @@
     <input type="text" name="age" id="age" class="text ui-widget-content ui-corner-all">
     <label for="gender">Gender</label>
     <input type="text" name="gender" id="gender" class="text ui-widget-content ui-corner-all">
-    <label for="address">Address</label>
-    <input type="text" name="address" id="address" class="text ui-widget-content ui-corner-all">
+    <label for="zipcode">zipcode</label>
+    <input type="text" name="zipcode" id="zipcode" class="text ui-widget-content ui-corner-all">
     <label for="income">Income</label>
     <input type="text" name="income" id="income" class="text ui-widget-content ui-corner-all">
     <label for="photo">Photo</label>
@@ -122,26 +118,47 @@
     <input type="text" name="phone" id="phone" class="text ui-widget-content ui-corner-all">
 
 
-    <label for="isManager">Are you a manager?</label>
-    <input class="messageCheckbox" type="checkbox" name="isManager" value="0"><br>
+    Create new team? <input class="messageCheckbox" type="checkbox" id="checkbox" />
+    <script>
+      $("#checkbox").click( function(){
+         if( $(this).is(':checked')){
+            $( "#dd2" ).hide();  
+            $( "#newTeam" ).show();  
+         } 
+         else{
+            $( "#dd2" ).show();
+            $( "#newTeam" ).hide();
+         }
+      });
+    </script>
 
+
+    <input type="text" id="newTeam" name="newTeam" class="text ui-widget-content ui-corner-all" style="display:none">
+
+    <div id="dd1">
+    What sport are you interested in?
     <select id="interests">
-      <option>What sport are you interested in?</option>
+      <option></option>
       <script>
           for(i=0; i<SPORTLIST.length; i++) {  
               document.write('<option value="' + SPORTLIST[i] +'">' + SPORTLIST[i] + '</option>');
           }
       </script>
     </select><br>
+    </div>
 
-    <select id="teams">
-      <option>What team would you like to join?</option>
-      <script>
-          for(i=0; i<TEAMS.length; i++) {  
-              document.write('<option value="' + TEAMS[i].teamName +'">' + TEAMS[i].teamName + '</option>');
-          }
-      </script>
-    </select><br>
+
+    <div id="dd2">
+      What team would you like to join?
+      <select id="teams">
+        <option></option>
+        <script>
+            for(i=0; i<TEAMS.length; i++) {  
+                document.write('<option value="' + TEAMS[i].teamName +'">' + TEAMS[i].teamName + '</option>');
+            }
+        </script>
+      </select><br>
+    </div>
 
   </fieldset>
   </form>
