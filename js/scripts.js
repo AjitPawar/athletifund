@@ -186,4 +186,4 @@ var states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
   'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
 ];
 
-var SearchList = ['Rufus Garcia' ,'Bernadette Warren' ,'Wilbert Thomas','Celia May','Roy Abbott', 'Warriors', 'Little League', 'Hurricanes', 'Pistons', 'Raptors'];
+var SearchList = ['Rufus Garcia' ,'Bernadette Warren' ,'Wilbert Thomas','Celia May','Roy Abbott', 'Warriors', 'Little League', 'Hurricanes', 'Pistons', 'Raptors', 'Colorado State Skiing Team', 'Johnny Walker', 'Rosie Smiles', 'Wayne Bryan', 'Dennis Hong', 'Valentino Rossi', 'Jimmy Charles', 'Martina Petkova', 'Jade Harley', 'Hannah Connor', 'Carrie White', 'Kaitlyn Owen'];

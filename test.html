@@ -140,30 +140,79 @@
       
 		<ul id="nt-example1" class="newsticker panel panel-default" style="height: 240px; overflow: hidden; list-style-type: none; padding: 0;">
 
-			<li style="margin-top: 0px;">Johnny <a href="javascript:void(0);" data-launch-view="individualPage" onclick="beforeIndividualPage()">Read more...</a>
+			<li style="margin-top: 0px;">Johnny Walker <a href="javascript:void(0);" data-launch-view="individualPage" onclick="beforeIndividualPage()">>></a>
 				<div class="progress" style="height: 10px">
-					<div class="progress-bar progress-bar-danger" style="width: 20%">
+					<div class="progress-bar progress-bar-danger" style="width: 10%">
 						<span class="sr-only"></span>
 					</div>
 				</div>
 			</li>
-			<li style="margin-top: 0px;">Roy <a href="javascript:void(0);" onclick="testFunc()">Read more...</a>
+			<li style="margin-top: 0px;">Rosie Smiles <a href="javascript:void(0);" data-launch-view="individualPage" onclick="beforeIndividualPage()">>></a>
 				<div class="progress" style="height: 10px">
-					<div class="progress-bar progress-bar-warning" style="width: 40%">
+					<div class="progress-bar progress-bar-danger" style="width: 21%">
 						<span class="sr-only"></span>
 					</div>
 				</div>
 			</li>
-			<li style="margin-top: 0px;">Celia <a href="javascript:void(0);" onclick="testFunc()">Read more...</a>
+			<li style="margin-top: 0px;">Wayne Bryan <a href="javascript:void(0);" onclick="testFunc()">>></a>
 				<div class="progress" style="height: 10px">
-					<div class="progress-bar progress-bar-info" style="width: 60%">
+					<div class="progress-bar progress-bar-warning" style="width: 30%">
 						<span class="sr-only"></span>
 					</div>
 				</div>
 			</li>
-			<li style="margin-top: 0px;">Martin <a href="javascript:void(0);" onclick="testFunc()">Read more...</a>
+			<li style="margin-top: 0px;">Dennis Hong <a href="javascript:void(0);" onclick="testFunc()">>></a>
 				<div class="progress" style="height: 10px">
-					<div class="progress-bar progress-bar-success" style="width: 80%">
+					<div class="progress-bar progress-bar-warning" style="width: 38%">
+						<span class="sr-only"></span>
+					</div>
+				</div>
+			</li>
+			<li style="margin-top: 0px;">Valentino Rossi <a href="javascript:void(0);" onclick="testFunc()">>></a>
+				<div class="progress" style="height: 10px">
+					<div class="progress-bar progress-bar-warning" style="width: 48%">
+						<span class="sr-only"></span>
+					</div>
+				</div>
+			</li>
+			<li style="margin-top: 0px;">Jimmy Charles <a href="javascript:void(0);" onclick="testFunc()">>></a>
+				<div class="progress" style="height: 10px">
+					<div class="progress-bar progress-bar-info" style="width: 50%">
+						<span class="sr-only"></span>
+					</div>
+				</div>
+			</li>
+			<li style="margin-top: 0px;">Martina Petkova <a href="javascript:void(0);" onclick="testFunc()">>></a>
+				<div class="progress" style="height: 10px">
+					<div class="progress-bar progress-bar-info" style="width: 68%">
+						<span class="sr-only"></span>
+					</div>
+				</div>
+			</li>
+			<li style="margin-top: 0px;">Jade Harley <a href="javascript:void(0);" onclick="testFunc()">>></a>
+				<div class="progress" style="height: 10px">
+					<div class="progress-bar progress-bar-success" style="width: 76%">
+						<span class="sr-only"></span>
+					</div>
+				</div>
+			</li>
+			<li style="margin-top: 0px;">Hannah Connor <a href="javascript:void(0);" onclick="testFunc()">>></a>
+				<div class="progress" style="height: 10px">
+					<div class="progress-bar progress-bar-success" style="width: 90%">
+						<span class="sr-only"></span>
+					</div>
+				</div>
+			</li>
+			<li style="margin-top: 0px;">Carrie White <a href="javascript:void(0);" onclick="testFunc()">>></a>
+				<div class="progress" style="height: 10px">
+					<div class="progress-bar progress-bar-success" style="width: 93%">
+						<span class="sr-only"></span>
+					</div>
+				</div>
+			</li>
+			<li style="margin-top: 0px;">Kaitlyn Owen <a href="javascript:void(0);" onclick="testFunc()">>></a>
+				<div class="progress" style="height: 10px">
+					<div class="progress-bar progress-bar-success" style="width: 98%">
 						<span class="sr-only"></span>
 					</div>
 				</div>
@@ -345,8 +394,8 @@
 
 		<script>
 			$('.newsticker').newsTicker({
-				row_height: 22,
-				max_rows: 100,
+				row_height: 10,
+				max_rows: 10,
 				speed: -1,
 				direction: 'up',
 				duration: 4000,
@@ -362,9 +411,9 @@
         minLength: 1
       },
       {
-        name: 'states',
+        name: 'SearchList',
         displayKey: 'value',
-        source: substringMatcher(states)
+        source: substringMatcher(SearchList)
       });
       
       
@@ -461,12 +510,12 @@
 <div class="container">
 	<div class="row">
 		<div class="col-sm-3"><!--left col-->
-			<div class="col-sm-10"><h1 id="userName"><b>Johnny</b></h1></div>
+			<div class="col-sm-10"><h1 id="userName"><b>Johnny Walker</b></h1></div>
 			<div class="col-sm-10"><a href="" class="pull-left"><img title="profile image" src="img/johnny.jpg" width="100%"></a></div>
         </div>
     	<div class="col-sm-9">
 			<h2>Description</h2>
-			<span class="pull-right">
+			<span class="pull-left">
 				 I like sports but I don't have money for equipment. Please help me by donating to my cause.
 			</span>
         </div>
@@ -476,10 +525,10 @@
   		<div class="col-sm-3"><!--left col-->
               
           <ul class="list-group">
-            <li class="list-group-item text-right"><span class="pull-left"><strong>Name</strong></span> Johnny</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Name</strong></span> Johnny Walker</li>
             <li class="list-group-item text-right"><span class="pull-left"><strong>Age</strong></span> 15</li>
             <li class="list-group-item text-right"><span class="pull-left"><strong>Gender</strong></span> Male</li>
-            <li class="list-group-item text-right"><span class="pull-left"><strong>Sports Interests</strong></span> Basketball, Soccer, Skiing</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Sports Interests</strong></span>   Soccer, Skiing</li>
           </ul>
           <strong>Teams:</strong>
           <ul style="list-style-type: none; padding-left: 15px;">
@@ -691,7 +740,7 @@
                   <tbody id="fundingRequestsTableTeam">
                     <tr>
 					  <td><b>12-01-2015</b></td>
-                      <td>Johnny</td>
+                      <td>Johnny Walker</td>
                       <td align="right">
 						  <button data-toggle="modal" data-target="#PayPalModalTeam">
 								<img src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" alt="PayPal - The safer, easier way to pay online!">
