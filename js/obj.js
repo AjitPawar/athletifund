@@ -4,12 +4,12 @@ var SPORTLIST = ["Archery", "Badminton", "Baseball", "Basketball", "Dance", "Dod
 var PEOPLE = [];
 var TEAMS = [];
 
-function Person(name, age, gender, address, income, sportsInterests, photo,
+function Person(name, age, gender, zipcode, income, sportsInterests, photo,
 	description, isManager, email, phone, requests) {
 	this.name = name;
 	this.age = age;
 	this.gender = gender; //M, F, N
-	this.address = address; //private
+	this.zipcode = zipcode; //private
 	this.income = income; //private
 	this.sportsInterests = sportsInterests; //list of keywords from SPORTLIST
 	this.photo = photo;
@@ -19,7 +19,10 @@ function Person(name, age, gender, address, income, sportsInterests, photo,
 	this.email = email; //private
 	this.phone = phone; //private
 	this.requests = requests; //list of Request objects
+	this.lat = lat;
+	this.lon = lon;
 	}
+
 	
 function Request(amount, endDate, isFunded, mailingList, donorList) {
 	this.amount = amount;
@@ -116,9 +119,12 @@ function search(searchText) {
 				}
 			}
 		}
+	return results;
 	}
 
 
+// **** TEST DATA ****
+/*
 var ls_teams = [];
 var ls_teams2 = [];
 var ls_teams3 = [];
@@ -154,6 +160,8 @@ var person6 = new Person("F", 18, "M", "L5B2Y7", 3.50, sports5_ls,
 	"img/D.jpg", "hi guy", 0, ls_teams3, "F@bye.com", "3333333333",
 	ls_requests);
 
+var membership_ls = [person1,person2];
+var membership2_ls = [person3,person4, person5];
 
 var team1 = new Team("Preteen Girls' Rugby", (9,13), "F", 25,
  person2, 25, "recreationcentre1", "small people. violent sports.",
@@ -164,10 +172,7 @@ var team2 = new Team("Dancing Queens", (15,18), "N", 3, person4,
 	5, "recplace", "sparkley", "teamsportz.jpg", mailing2_ls,
 	"img/friendship.jpg", sports_ls, membership2_ls);
 
-var membership_ls = [person1,person2];
-var membership2_ls = [person3,person4, person5];
 
-		
 var req1 = new Request(666, "14-06-2014", 0, mailing2_ls, "Kool Guy");
 var req2 = new Request(40, "30-08-2014", 0,  mailing_ls, "Mr. Man");
 
@@ -188,3 +193,4 @@ PEOPLE.push(person6);
 
 TEAMS.push(team1);
 TEAMS.push(team2);
+*/

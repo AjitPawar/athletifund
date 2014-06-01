@@ -65,7 +65,7 @@
   <div class="row">
     <div class="col-xs-10"><!--map-canvas will be postioned here--></div>
     <div class="col-xs-2" id="left">
-			
+
       <!-- item list -->
       <div class="title">
         <div><a href=""><h2 align="center">News</h2></a></div>
@@ -73,10 +73,34 @@
       </div>
       
 		<ul id="nt-example1" class="newsticker panel panel-default" style="height: 240px; overflow: hidden; list-style-type: none; padding: 0;">
-			<li style="margin-top: 0px;">News 1. <a href="javascript:void(0);" onclick="testFunc()">Read more...</a></li>
-			<li style="margin-top: 0px;">News 2. <a href="javascript:void(0);" onclick="testFunc()">Read more...</a></li>
-			<li style="margin-top: 0px;">News 3. <a href="javascript:void(0);" onclick="testFunc()">Read more...</a></li>
-			<li style="margin-top: 0px;">News 4. <a href="javascript:void(0);" onclick="testFunc()">Read more...</a></li>
+			<li style="margin-top: 0px;">News 1. <a href="javascript:void(0);" onclick="testFunc()">Read more...</a>
+				<div class="progress">
+					<div class="progress-bar progress-bar-danger" style="width: 20%">
+						<span class="sr-only"></span>
+					</div>
+				</div>
+			</li>
+			<li style="margin-top: 0px;">News 2. <a href="javascript:void(0);" onclick="testFunc()">Read more...</a>
+				<div class="progress">
+					<div class="progress-bar progress-bar-warning" style="width: 40%">
+						<span class="sr-only"></span>
+					</div>
+				</div>
+			</li>
+			<li style="margin-top: 0px;">News 3. <a href="javascript:void(0);" onclick="testFunc()">Read more...</a>
+				<div class="progress">
+					<div class="progress-bar progress-bar-info" style="width: 60%">
+						<span class="sr-only"></span>
+					</div>
+				</div>
+			</li>
+			<li style="margin-top: 0px;">News 4. <a href="javascript:void(0);" onclick="testFunc()">Read more...</a>
+				<div class="progress">
+					<div class="progress-bar progress-bar-success" style="width: 80%">
+						<span class="sr-only"></span>
+					</div>
+				</div>
+			</li>
 			<li style="margin-top: 0px;">News 5. <a href="javascript:void(0);" onclick="testFunc()">Read more...</a></li>
 			<li style="margin-top: 0px;">News 6. <a href="javascript:void(0);" onclick="testFunc()">Read more...</a></li>
 			<li style="margin-top: 0px;">News 7. <a href="javascript:void(0);" onclick="testFunc()">Read more...</a></li>
@@ -119,7 +143,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
 		<script src="js/scripts.js"></script>
 		<script src="js/jquery.newsTicker.min.js"></script>
-		
+
 		<script>
 			$('.newsticker').newsTicker({
 				row_height: 22,
@@ -133,6 +157,6 @@
 				nextButton:  $('#next-button'),
 			});
 		</script>
-		
+
 	</body>
 </html>
