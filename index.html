@@ -56,8 +56,8 @@
                 <li><a href="#">Football</a></li>
               </ul>
             </div>
-            <div id="the-basics">
-            <input class="typeahead form-control" type="text" placeholder="States of USA" style="float: right;">
+            <div id="the-basics" style="float: right;">
+            <input class="typeahead form-control" type="text" placeholder="States of USA">
             </div>
             <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span> </span>
           </div>
@@ -195,8 +195,7 @@
       $('#the-basics .typeahead').typeahead({
         hint: true,
         highlight: true,
-        minLength: 1,
-        float: right,
+        minLength: 1
       },
       {
         name: 'states',
