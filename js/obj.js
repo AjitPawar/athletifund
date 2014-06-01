@@ -131,48 +131,48 @@ var sports5_ls = ["Basketball"];
 var mailing_ls = ["generous@bye.com"];
 var mailing2_ls = ["cashmoney@bye.com"];
 
-var person1 = {name:"A", age:10, gender:"F", income:3.50, sportsInterests:sports3_ls, photo:"img/D.jpg", description:"I'm some girl", 
-	isManager:0, teams:ls_teams, email:"hi@bye.com", phone:"4152232211", requests:ls_requests};
+var person1 = Person("A", 10, "F", 3.50, sports3_ls, "img/D.jpg", "I'm some girl", 
+	0, ls_teams, "hi@bye.com", "4152232211", ls_requests);
 
-var person2 = {name:"B", age:12, gender:"F", income:1000, sportsInterests:sports3_ls, 
-	photo:"img/D.jpg", description:"I'm some girl also", isManager:1, teams:ls_teams, email:"hello@bye.com", phone:"1231231233",
-	requests:ls_requests};
+var person2 = Person("B", 12, "F", 1000, sports3_ls, 
+	"img/D.jpg", "I'm some girl also", 1, ls_teams, "hello@bye.com", "1231231233",
+	ls_requests);
 
 var membership_ls = [person1,person2];
 
 
-var team1 = {teamName:"Preteen Girls' Rugby", ageRange:(9,13), gender:"F", maxEnrollment:25,
- teamManager:person2, minEntryFee:25, homeRec:"recreationcentre1", description:"small people. violent sports.",
-  photo:"img/friendship.jpg", mailingList:mailing_ls,	contactEmail:"hello@bye.com", sports:sports2_ls, members:membership_ls};
+var team1 = Team("Preteen Girls' Rugby", (9,13), "F", 25,
+ person2, 25, "recreationcentre1", "small people. violent sports.",
+  "img/friendship.jpg", mailing_ls,	"hello@bye.com", sports2_ls, membership_ls);
 
 person1.teams.push(team1);
 person2.teams.push(team1);
 
-var person3 = {name:"C", age:15, gender:"M", income:3.50, sportsInterests:sports5_ls, 
-	photo:"img/D.jpg", description:"nice guy", isManager:0, teams:ls_teams2, email:"C@bye.com", phone:"4152232211",
-	requests:ls_requests};
+var person3 = Person("C", 15, "M", 3.50, sports5_ls, 
+	"img/D.jpg", "nice guy", 0, ls_teams2, "C@bye.com", "4152232211",
+	requests:ls_requests);
 
-var person4 = {name:"D", age:16, gender:"F", income:3.50, sportsInterests:sports5_ls, 
-	photo:"img/D.jpg", description:"kool guy", isManager:1, teams:ls_teams2, email:"D@bye.com", phone:"1111111111",
-	requests:ls_requests};
+var person4 = Person("D", 16, "F", 3.50, sports5_ls, 
+	"img/D.jpg", "kool guy", 1, ls_teams2, "D@bye.com", "1111111111",
+	ls_requests);
 
-var person5 = {name:"E", age:16, gender:"M", income:3.50, sportsInterests:sports5_ls, 
-	photo:"img/D.jpg", description:"dude guy", isManager:0, teams:ls_teams2, email:"E@bye.com", phone:"2222222222",
-	requests:ls_requests};
+var person5 = Person("E", 16, "M", 3.50, sports5_ls, 
+	"img/D.jpg", "dude guy", 0, ls_teams2, "E@bye.com", "2222222222",
+	ls_requests);
 
-var person6 = {name:"F", age:18, gender:"M", income:3.50, sportsInterests:sports5_ls, 
-	photo:"img/D.jpg", description:"hi guy", isManager:0, teams:ls_teams3, email:"F@bye.com", phone:"3333333333",
-	ls_requests};
+var person6 = Person("F", 18, "M", 3.50, sports5_ls, 
+	"img/D.jpg", "hi guy", 0, ls_teams3, "F@bye.com", "3333333333",
+	ls_requests);
 
 var membership2_ls = [person3,person4, person5];
 
-var team2 = {teamName:"Dancing Queens", ageRange:(15,18), gender:"N", maxEnrollment:3, teamManager:person4,
-	minEntryFee:5, homeRec:"recplace", description:"sparkley", photo:"teamsportz.jpg", mailingList:mailing2_ls,
-	contactEmail:"img/friendship.jpg", sports:sports_ls, members:membership2_ls};
+var team2 = Team("Dancing Queens", (15,18), "N", 3, person4,
+	5, "recplace", "sparkley", "teamsportz.jpg", mailing2_ls,
+	"img/friendship.jpg", sports_ls, membership2_ls);
 		
 person3.teams.push(team2);
 person4.teams.push(team2);
 person5.teams.push(team2);
 
-var req1 = {666, "14-06-2014", 0, mailing2_ls, "Kool Guy"};
-var req2 = {40, "30-08-2014", 0,  mailing_ls, "Mr. Man"};
+var req1 = Request(666, "14-06-2014", 0, mailing2_ls, "Kool Guy");
+var req2 = Request(40, "30-08-2014", 0,  mailing_ls, "Mr. Man");
