@@ -1,120 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap 101 Template</title>
-    <script src="jquery-1.11.1.min.js"></script>
-    <script src="infinity.min.js"></script>
-    <script src="jquery.slimscroll.min.js"></script>
+ 
+<html>
+<head>
+    <title>Demo</title>
+    <script src="js/jquery-1.11.1.min.js"></script>
     <style>
-		.hide {
-			display: none;
-		}
-    </style>
-
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body>
+        .hide
+        {
+            display: none;
+        }
+    </style> 
+</head>
+<body>
     <div id="lotOfPages">
 
-    <div class="view" id="page1">
+    <div class="view" id="mainPage">
             <h1>Page 1</h1>
-            <p>
-				This is some text to demonstrate having a long paragraph
-				with text in it.
-            </p>
-    </div>
+        </div>
         
-    <div class="view hide" id="page2">
-			<h1>Page 2</h1>
-			<h2 align="middle">The title of the image</h2>
-			
-			<table id="stuff" border="0">
-				<tr>
-					<th>User Info</th>
-					<th/>
-					<th align="left">Requests</th>
-				</tr>
-				<tr><td colspan="3"><hr/></td></tr>
-				<tr valign="top">
-					<td width="20%">
-						<img src="teamspirit.jpg" alt="Showing some team spirit!"
-							height="342"
-							width="342">
-						</img>
-					</td>
-					<td width="3%"/>
-					<td width="77%">
-						<b>Whoa such text</b>
-					</td>
-				</tr>
-			</table>
-			
-    </div>
+    <div class="view hide" id="individualPage">
+            <h1>Page 2</h1>
+        </div>
 
-    <div class="view hide" id="page3">
+    <div class="view hide" id="teamPage">
             <h1>Page 3</h1>
-            <button id="addContent">Add</button>
-            <ul>
-				<li>Lorem Ipsum 1</li>
-				<li>Lorem Ipsum 2</li>
-				<li>Lorem Ipsum 3</li>
-				<li>Lorem Ipsum 4</li>
-				<li>Lorem Ipsum 5</li>
-				<li>Lorem Ipsum 1</li>
-				<li>Lorem Ipsum 2</li>
-				<li>Lorem Ipsum 3</li>
-				<li>Lorem Ipsum 4</li>
-				<li>Lorem Ipsum 5</li>
-				<li>Lorem Ipsum 1</li>
-				<li>Lorem Ipsum 2</li>
-				<li>Lorem Ipsum 3</li>
-				<li>Lorem Ipsum 4</li>
-				<li>Lorem Ipsum 5</li>
-				<li>Lorem Ipsum 1</li>
-				<li>Lorem Ipsum 2</li>
-				<li>Lorem Ipsum 3</li>
-				<li>Lorem Ipsum 4</li>
-				<li>Lorem Ipsum 5</li>
-            </ul>
-            <br/>
-    </div>
+        </div>
 
     </div>
 
-	<button id="showPage1Btn" data-launch-view="page1">Page 1</button>
-	<button id="showPage2Btn" data-launch-view="page2">Page 2</button>
-	<button id="showPage3Btn" data-launch-view="page3">Page 3</button>
+    <button id="showMainPageBtn" data-launch-view="mainPage" onclick="beforeMainPage()">Main Page</button>
+    <button id="showIndividualPageBtn" data-launch-view="individualPage" onclick="beforeIndividualPage()">Individual Page</button>
+    <button id="showTeamPageBtn" data-launch-view="teamPage" onclick="beforeTeamPage()">Team Page</button>
     
     <script>
-		var $el = $('#infinityList');
-		var listView = new infinity.ListView($el);
-		 
-		document.getElementById("addContent").onclick = function() {
-			var newText = prompt("Enter a string to add to the list", "");
-			newText = "<p>" + newText + "<span>&nbsp;&nbsp;</span><button id=\"del\">Del&nbsp</button></p>";
-			var newContent = $(newText);
-			listView.append(newContent);
-			
-			var listItems = listView.find('.my-items');
-			for(var index = 0, length = listItems.length; index < length; index++) {
-				var test = listItems[index].$el;
-			}
-		}
-    </script>
-    
-    <script>
-    $(document).ready(function (e) {
+		$(document).ready(function (e) {
 
             function showView(viewName) {
                 $('.view').hide();
@@ -126,19 +45,22 @@
                 var viewName = $(this).attr('data-launch-view');
                 showView(viewName);
             });
-            
-            $(function(){
-				$('#page3').slimScroll({
-					height: '25px'
-				});
-			});
 
-    });
+        });
+        
+        function beforeMainPage() {
+			alert("Main Page");
+		}
+		
+		function beforeIndividualPage() {
+			alert("Individual Page");
+		}
+		
+		function beforeTeamPage() {
+			alert("Team Page");
+		}
+        
     </script>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-  </body>
+</body>
 </html>
