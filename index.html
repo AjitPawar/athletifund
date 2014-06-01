@@ -19,34 +19,7 @@
 		<script>
 			function testFunc() {
 				alert("Wow such call");
-			}
-
-
-			//**sheilla's shit
-			var data = {
-  "login":"/login",
-  "home":"/",
-  "user":"/user",
-  "tags":"/tags",
-  "google":"http://google.com"
-};
-
-$('.typeahead').typeahead({
-  minLength:2,
-  updater: function (item) {
-		/* navigate to the selected item */
-		window.location.href = data[item];
-	},
-  source: function (typeahead, query) {
-    var links=[];
-    for (var name in data){
-    	links.push(name); 
-    }
- 
-    return links;
-	}
-});
-//end 
+			} 
 
 		</script>
 	</head>
@@ -68,9 +41,6 @@ $('.typeahead').typeahead({
         <li><a href="#">Sign Up</a></li>
         <li>&nbsp;</li>
       </ul>
-      //sheilla's shit
-      <input type="text" class="typeahead" data-provide="typeahead" data-items="4">
-      //end
       <form class="navbar-form">
         <div class="form-group" style="display:inline;">
           <div class="input-group">
