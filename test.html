@@ -4,6 +4,7 @@
 <head>
     <title>Athletifun</title>
     <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/obj.js"></script>
     <style>
         .hide
         {
@@ -86,7 +87,7 @@
 
 
 <div class="navbar navbar-custom navbar-fixed-top">
- <div class="navbar-header"><a class="navbar-brand" href="#" style="font-family: 'Montserrat', sans-serif;">Athletifund</a>
+ <div class="navbar-header"><a class="navbar-brand" href="#" style="font-family: 'Montserrat', sans-serif;" data-launch-view="mainPage" onclick="beforeMainPage()">AthletifundAthletifund</a>
       <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -115,7 +116,7 @@
               </ul>
             </div>
             <div id="the-basics" style="float: right;">
-            <input class="typeahead form-control" type="text" placeholder="States of USA">
+            <input class="typeahead form-control" type="text" placeholder="Individual/Team Search">
             </div>
             <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span> </span>
           </div>
@@ -138,36 +139,36 @@
       </div>
       
 		<ul id="nt-example1" class="newsticker panel panel-default" style="height: 240px; overflow: hidden; list-style-type: none; padding: 0;">
-<!--
-			<li style="margin-top: 0px;">News 1. <a href="javascript:void(0);" onclick="testFunc()">Read more...</a>
+
+			<li style="margin-top: 0px;">Johnny <a href="javascript:void(0);" data-launch-view="individualPage" onclick="beforeIndividualPage()">Read more...</a>
 				<div class="progress" style="height: 10px">
 					<div class="progress-bar progress-bar-danger" style="width: 20%">
 						<span class="sr-only"></span>
 					</div>
 				</div>
 			</li>
-			<li style="margin-top: 0px;">News 2. <a href="javascript:void(0);" onclick="testFunc()">Read more...</a>
+			<li style="margin-top: 0px;">Roy <a href="javascript:void(0);" onclick="testFunc()">Read more...</a>
 				<div class="progress" style="height: 10px">
 					<div class="progress-bar progress-bar-warning" style="width: 40%">
 						<span class="sr-only"></span>
 					</div>
 				</div>
 			</li>
-			<li style="margin-top: 0px;">News 3. <a href="javascript:void(0);" onclick="testFunc()">Read more...</a>
+			<li style="margin-top: 0px;">Celia <a href="javascript:void(0);" onclick="testFunc()">Read more...</a>
 				<div class="progress" style="height: 10px">
 					<div class="progress-bar progress-bar-info" style="width: 60%">
 						<span class="sr-only"></span>
 					</div>
 				</div>
 			</li>
-			<li style="margin-top: 0px;">News 4. <a href="javascript:void(0);" onclick="testFunc()">Read more...</a>
+			<li style="margin-top: 0px;">Martin <a href="javascript:void(0);" onclick="testFunc()">Read more...</a>
 				<div class="progress" style="height: 10px">
 					<div class="progress-bar progress-bar-success" style="width: 80%">
 						<span class="sr-only"></span>
 					</div>
 				</div>
 			</li>
--->
+
 		</ul>
     </div>
     <div class="col-xs-4"><!--map-canvas will be postioned here--></div>
@@ -303,23 +304,23 @@
       });
       
       
-			var newsFeed = document.getElementById('nt-example1');
-			for(var i = 0; i < 15; i++) {
-				var oneRow = document.createElement('li');
-				var amount = (20 + 6*i);
-				var colour;
-				if(amount < 25)
-					colour = 'danger';
-				else if(amount >= 25 && amount < 50)
-					colour = 'warning';
-				else if(amount >= 50 && amount < 75)
-					colour = 'info';
-				else
-					colour = 'success';
-				oneRow.innerHTML = 'Johnny ' + i + ' needs funding! <a href="javascript:void(0);" onclick="testFunc()">Read more...</a><div class="progress" style="height: 5px"><div class="progress-bar progress-bar-'+ colour + '" style="width: ' + amount + '%;><span class="sr-only"></span></div></div>';
-                newsFeed.appendChild(oneRow);
-				
-			}
+			//~ var newsFeed = document.getElementById('nt-example1');
+			//~ for(var i = 0; i < 15; i++) {
+				//~ var oneRow = document.createElement('li');
+				//~ var amount = (20 + 6*i);
+				//~ var colour;
+				//~ if(amount < 25)
+					//~ colour = 'danger';
+				//~ else if(amount >= 25 && amount < 50)
+					//~ colour = 'warning';
+				//~ else if(amount >= 50 && amount < 75)
+					//~ colour = 'info';
+				//~ else
+					//~ colour = 'success';
+				//~ oneRow.innerHTML = 'Johnny ' + i + ' needs funding! <a href="javascript:void(0);" onclick="testFunc()">Read more...</a><div class="progress" style="height: 5px"><div class="progress-bar progress-bar-'+ colour + '" style="width: ' + amount + '%;><span class="sr-only"></span></div></div>';
+                //~ newsFeed.appendChild(oneRow);
+				//~ 
+			//~ }
 			
 		</script>
 
@@ -353,7 +354,7 @@
 	<body>
 		
 <div class="navbar navbar-custom navbar-fixed-top">
- <div class="navbar-header"><a class="navbar-brand" href="#" style="font-family: 'Montserrat', sans-serif;">Athletifund</a>
+ <div class="navbar-header"><a class="navbar-brand" href="#" style="font-family: 'Montserrat', sans-serif;" data-launch-view="mainPage" onclick="beforeMainPage()">Athletifund</a>
       <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -382,7 +383,7 @@
               </ul>
             </div>
             <div id="the-basics" style="float: right;">
-            <input class="typeahead form-control" type="text" placeholder="States of USA">
+            <input class="typeahead form-control" type="text" placeholder="Individual/Team Search">
             </div>
             <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span> </span>
           </div>
@@ -402,7 +403,7 @@
     	<div class="col-sm-9">
 			<h2>Description</h2>
 			<span class="pull-right">
-				 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+				 I like sports but I don't have money for equipment. Please help me by donating to my cause.
 			</span>
         </div>
     </div>
@@ -418,7 +419,7 @@
           </ul>
           <strong>Teams:</strong>
           <ul style="list-style-type: none; padding-left: 15px;">
-			<li><span class="pull-left active"><a href="#">Team Unite</a></span></li>
+			<li><span class="pull-left active"><a href="#" data-launch-view="teamPage" onclick="beforeTeamPage()">Colorado State Skiing Team</a></span></li>
           </ul>
           
         </div>
@@ -519,13 +520,13 @@
 				nextButton:  $('#next-button'),
 			});
 			
-			var fundingRequests = document.getElementById('fundingRequestsTable');
-			for(var i = 0; i < 10; i++) {
-				var oneRow = document.createElement('tr');
-				oneRow.innerHTML = '<tr><td><b>12-01-2015</b></td><td>Colorado State Skiing Team</td><td align="right"><button data-toggle="modal" data-target="#PayPalModal"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" alt="PayPal - The safer, easier way to pay online!"><img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"></button></td></tr>';
-                fundingRequests.appendChild(oneRow);
-				
-			}
+			//~ var fundingRequests = document.getElementById('fundingRequestsTable');
+			//~ for(var i = 0; i < 10; i++) {
+				//~ var oneRow = document.createElement('tr');
+				//~ oneRow.innerHTML = '<tr><td><b>12-01-2015</b></td><td>Colorado State Skiing Team</td><td align="right"><button data-toggle="modal" data-target="#PayPalModal"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" alt="PayPal - The safer, easier way to pay online!"><img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"></button></td></tr>';
+                //~ fundingRequests.appendChild(oneRow);
+				//~ 
+			//~ }
 		</script>
 		
 	</body>
@@ -536,7 +537,7 @@
 	<!-- Team Page -->
     <div class="view" id="teamPage">
             <div class="navbar navbar-custom navbar-fixed-top">
- <div class="navbar-header"><a class="navbar-brand" href="#" style="font-family: 'Montserrat', sans-serif;">Athletifund</a>
+ <div class="navbar-header"><a class="navbar-brand" href="#" style="font-family: 'Montserrat', sans-serif;" data-launch-view="mainPage" onclick="beforeMainPage()">Athletifund</a>
       <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -565,7 +566,7 @@
               </ul>
             </div>
             <div id="the-basics" style="float: right;">
-            <input class="typeahead form-control" type="text" placeholder="States of USA">
+            <input class="typeahead form-control" type="text" placeholder="Individual/Team Search">
             </div>
             <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span> </span>
           </div>
@@ -579,13 +580,13 @@
 <div class="container">
 	<div class="row">
 		<div class="col-sm-3"><!--left col-->
-			<div class="col-sm-10" width="100%"><h1 id="userName"><b>Colorado State Skiing Team</b></h1></div>
-			<div class="col-sm-10"><a href="" class="pull-left"><img title="profile image" src="img/friendship.jpg" width="100%"></a></div>
+			<div class="col-sm-10" width="100%"><h1 id="bigTeamName"><b>Colorado State Skiing Team</b></h1></div>
+			<div class="col-sm-10"><a href="" class="pull-left"><img id="teamPhoto" title="profile image" src="img/friendship.jpg" width="100%"></a></div>
         </div>
     	<div class="col-sm-9">
 			<h2>About</h2>
-			<span class="pull-right">
-				 On vacation at Aspen, Colorado, Stan, Kyle, Butters, and Cartman are learning to ski when an older skier named Tad begins harassing Stan for no reason. Tad demands that Stan race him for "stealing" his girlfriend Heather, whom Stan has never met before. Stan agrees fully aware that since he is a complete amateur, Tad will most certainly beat him, but reluctantly races and loses as he expected to do. Afterwards, he is approached by a teenage girl wearing glasses who invites him to the Aspen Youth Center to dance. There, the boys discover that Tad's father plans to bulldoze the Aspen Youth Center. Tad then appears on stage to sing an off-key song where he repeats "Stan Darsh" over and over until Stan snaps and asks what he wants. Tad demands another race, this time on a much larger hill, and it is agreed that if Stan wins, Tad's father will not bulldoze the youth center. As the race begins, Tad races quickly down the hill, stopping to place traps in order to slow Stan down.
+			<span id="about" class="pull-left">
+				 Fun team, great coach, regular meetings on the slopes. Looking to give opportunities to young players to learn how to ski.
 			</span>
         </div>
     </div>
@@ -594,22 +595,22 @@
   		<div class="col-sm-3"><!--left col-->
               
           <ul class="list-group">
-            <li class="list-group-item text-right"><span class="pull-left"><strong>Name</strong></span>Colorado State Skiing Team</li>
-            <li class="list-group-item text-right"><span class="pull-left"><strong>Age Group</strong></span>10-15</li>
-            <li class="list-group-item text-right"><span class="pull-left"><strong>Manager</strong></span>Eric Cartman</li>
-            <li class="list-group-item text-right"><span class="pull-left"><strong>Minimum Entry Fee</strong></span>$60</li>
-            <li class="list-group-item text-right"><span class="pull-left"><strong>Home Rec Centre</strong></span>H0H 0H0</li>
-            <li class="list-group-item text-right"><span class="pull-left"><strong>Sport</strong></span>Skiing</li>
-            <li class="list-group-item text-right"><span class="pull-left"><strong>Gender</strong></span>Male</li>
-            <li class="list-group-item text-right"><span class="pull-left"><strong>Email</strong></span>cartman@gmail.com</li>
+            <li id="teamName" class="list-group-item text-right"><span class="pull-left"><strong>Name</strong></span>Colorado State Skiing Team</li>
+            <li id="ageGroup" class="list-group-item text-right"><span class="pull-left"><strong>Age Group</strong></span>10-15</li>
+            <li id="manager" class="list-group-item text-right"><span class="pull-left"><strong>Manager</strong></span>Eric Cartman</li>
+            <li id="minEntryFee" class="list-group-item text-right"><span class="pull-left"><strong>Minimum Entry Fee</strong></span>$60</li>
+            <li id="homeRecCenter" class="list-group-item text-right"><span class="pull-left"><strong>Home Rec Centre</strong></span>H0H 0H0</li>
+            <li id="sport" class="list-group-item text-right"><span class="pull-left"><strong>Sport</strong></span>Skiing</li>
+            <li id="gender" class="list-group-item text-right"><span class="pull-left"><strong>Gender</strong></span>Male</li>
+            <li id="teamEmail" class="list-group-item text-right"><span class="pull-left"><strong>Email</strong></span>cartman@gmail.com</li>
           </ul>
           <strong>Members:</strong>
-          <ul style="list-style-type: none; padding-left: 15px;">
+          <ul id="membersList" style="list-style-type: none; padding-left: 15px;">
 			<li><span class="pull-left active"><a href="#">Stan Marsh</a></span></li>
 			<br/>
 			<li><span class="pull-left active"><a href="#">Kyle Broflofsky</a></span></li>
 			<br/>
-			<li><span class="pull-left active"><a href="#">Eric Cartmen</a></span></li>
+			<li><span class="pull-left active"><a href="#">Eric Cartman</a></span></li>
 			<br/>
 			<li><span class="pull-left active"><a href="#">Kenny McCormick</a></span></li>
           </ul>
@@ -623,12 +624,12 @@
               
               <div class="table-responsive">
                 <table class="table table-hover" border="0">
-                  <tbody id="fundingRequestsTable">
+                  <tbody id="fundingRequestsTableTeam">
                     <tr>
 					  <td><b>12-01-2015</b></td>
                       <td>Johnny</td>
                       <td align="right">
-						  <button data-toggle="modal" data-target="#PayPalModal">
+						  <button data-toggle="modal" data-target="#PayPalModalTeam">
 								<img src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" alt="PayPal - The safer, easier way to pay online!">
 								<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
 						  </button>
@@ -637,7 +638,7 @@
                     </tr>
                   </tbody>
                 </table>
-                <div id="PayPalModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="PayPalModal" area-hidden="true">
+                <div id="PayPalModalTeam" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="PayPalModal" area-hidden="true">
 					  <div class="modal-dialog modal-sm">
 						  <div class="modal-content" style="padding: 15px">
 								<table>
@@ -711,23 +712,17 @@
 				prevButton:  $('#prev-button'),
 				nextButton:  $('#next-button'),
 			});
-			
-			var fundingRequests = document.getElementById('fundingRequestsTable');
-			for(var i = 0; i < 10; i++) {
-				var oneRow = document.createElement('tr');
-				oneRow.innerHTML = '<tr><td><b>12-01-2015</b></td><td>Johnny</td><td align="right"><button data-toggle="modal" data-target="#PayPalModal"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" alt="PayPal - The safer, easier way to pay online!"><img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"></button></td></tr>';
-                fundingRequests.appendChild(oneRow);
-				
-			}
 		</script>
 
     </div>
 
     </div>
 
+	<!--
     <button id="showMainPageBtn" data-launch-view="mainPage" onclick="beforeMainPage()">Main Page</button>
     <button id="showIndividualPageBtn" data-launch-view="individualPage" onclick="beforeIndividualPage()">Individual Page</button>
     <button id="showTeamPageBtn" data-launch-view="teamPage" onclick="beforeTeamPage()">Team Page</button>
+    -->
     
     <script>
 		$(document).ready(function (e) {
@@ -746,19 +741,99 @@
         });
         
         function beforeMainPage() {
-			alert("Main Page");
+			//alert("Main Page");
 			$(this).scrollTop(0);
 		}
 		
 		function beforeIndividualPage() {
-			alert("Individual Page");
+			//alert("Individual Page");
 			$(this).scrollTop(0);
+			
 		}
 		
 		function beforeTeamPage() {
-			alert("Team Page");
+			//alert("Team Page");
 			$(this).scrollTop(0);
+			//~ var fundingRequests = document.getElementById('fundingRequestsTableTeam');
+			//~ for(var i = 0; i < 10; i++) {
+				//~ var oneRow = document.createElement('tr');
+				//~ oneRow.innerHTML = '<td><b>12-01-2015</b></td><td>Johnny</td><td align="right"><button data-toggle="modal" data-target="#PayPalModal"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" alt="PayPal - The safer, easier way to pay online!"><img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"></button></td>';
+				//~ fundingRequests.appendChild(oneRow);
+				//~ 
+			//~ }
 		}
+		function drawTeamPage(team) {
+			var teamPhoto = document.getElementById('teamPhoto');
+			var userName = document.getElementById('userName');
+			var about = document.getElementById('about');
+			var teamName = document.getElementById('teamName');
+			var ageGroup = document.getElementById('ageGroup');
+			var manager = document.getElementById('manager');
+			var minEntryFee = document.getElementById('minEntryFee');
+			var homeRecCenter = document.getElementById('homeRecCenter');
+			var sport = document.getElementById('sport');
+			var gender = document.getElementById('gender');
+			var email = document.getElementById('teamEmail');
+			var membersList = document.getElementById('membersList');
+			var fundingRequestsTableTeam = document.getElementById('fundingRequestsTableTeam');
+			
+			var teamPhotoParam = team.photo;
+			var userNameParam = team.teamName;
+			var aboutParam = team.description;
+			var teamNameParam = team.teamName;
+			var ageGroupParam = team.ageRange;
+			var managerParam = team.teamManager;
+			var minEntryFeeParam = team.minEntryFee;
+			var homeRecCenterParam = team.homeRec;
+			var sportParam = team.sports;
+			var genderParam = team.gender;
+			var emailParam = team.contactEmail;
+			var membersListParam = team.members; // []
+			var fundingRequestsTableTeamParam = team.requests; // []
+
+			teamPhoto.src = 'img/johnny.jpg';
+			userName.innerHTML = '<span class="pull-left"><strong></strong></span>' + userNameParam;
+			about.innerHTML = '<span class="pull-left"><strong></strong></span>' + aboutParam;
+			teamName.innerHTML = '<span class="pull-left"><strong>Name</strong></span>' + teamNameParam;
+			ageGroup.innerHTML = '<span class="pull-left"><strong>Age Group</strong></span>' + ageGroupParam;
+			manager.innerHTML = '<span class="pull-left"><strong>Manager</strong></span>' + managerParam;
+			minEntryFee.innerHTML = '<span class="pull-left"><strong>Minimum Entry Fee</strong></span>' + minEntryFeeParam;
+			homeRecCenter.innerHTML = '<span class="pull-left"><strong>Home Rec Center</strong></span>' + homeRecCenterParam;
+			sport.innerHTML = '<span class="pull-left"><strong>Sport</strong></span>' + sportParam;
+			gender.innerHTML = '<span class="pull-left"><strong>Gender</strong></span>' + genderParam;
+			email.innerHTML = '<span class="pull-left"><strong>Email</strong></span>' + emailParam;
+			
+			for(var j = 0; j < membersListParam.length; j++) {
+				var member = document.createElement('li');
+				member.innerHTML = '<span class="pull-left active"><a href="#">' + membersListParam[i].name + '</a></span>'
+				membersList.appendChild(member);
+			}
+			membersList.innerHTML = '';
+			
+			if(fundingRequestsTableTeamParam) {
+				for(var i = 0; i < fundingRequestsTableTeamParam.length; i++) {
+					var oneRow = document.createElement('tr');
+					oneRow.innerHTML = '<td><b>' + fundingRequestsTableTeamParam[i].endDate + '</b></td><td>' + fundingRequestsTableTeamParam[i].requester.name + '</td><td align="right"><button data-toggle="modal" data-target="#PayPalModal"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" alt="PayPal - The safer, easier way to pay online!"><img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"></button></td>';
+					fundingRequestsTableTeam.appendChild(oneRow);
+					
+				}
+            }
+		}
+		function drawTeamFromMap() {
+			// Take the team name and draw the screen
+			drawTeamPage(team);
+		}
+		function drawTeamFromSearch() {
+			// Take the team name and draw the screen
+			drawTeamPage(team);
+		}
+		function drawTeamFromIndividual() {
+			// Take the team name and draw the screen
+			var team = TEAMS[0];
+			drawTeamPage(team);
+		}
+		
+		
 		
 		$('#individualPage.view').hide();
 		$('#teamPage.view').hide();
