@@ -15,13 +15,16 @@ function success(position) {
     //var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 
     var markers = [];
+    var userLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
     var map = new google.maps.Map(document.getElementById('map-canvas'), {
+        zoom : 16,
+        center : userLatLng,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     });
     var defaultBounds = new google.maps.LatLngBounds(
         
     new google.maps.LatLng(position.coords.latitude, position.coords.longitude), new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
-    map.fitBounds(defaultBounds);
+    //map.fitBounds(defaultBounds);
     // Create the search box and link it to the UI element.
     var input = /** @type {HTMLInputElement} */
     (
