@@ -23,14 +23,6 @@
 
   <script>
   $(function() {
- 
-    $( "#dialog-form" ).dialog({
-      autoOpen: false,
-      height: 300,
-      width: 350,
-      modal: true,
-      buttons: {
-        "Create an account": function() {
           
           var name = $( "#name" ).val(),
             age = $( "#age" ).val(),
@@ -59,25 +51,8 @@
               PEOPLE.push(p);              
             }
             
-            console.log(PEOPLE);
-            console.log(TEAMS);
-
-
-        },
-        Cancel: function() {
-          $( this ).dialog( "close" );
-        }
-      },
-      close: function() {
-        //allFields.val( "" ).removeClass( "ui-state-error" );
-      }
-    });
- 
-
-    $( "#create-user" )
-      .button().click(function() {
-        $( "#dialog-form" ).dialog( "open" );
-      });
+            //console.log(PEOPLE);
+            //console.log(TEAMS);
 
   });
 
@@ -85,74 +60,74 @@
 </head>
 <body>
  
-<div id="dialog-form" title="Create new user">
- 
-  <form>
-  <fieldset>
-    <label for="name">Name</label>
-    <input type="text" name="name" id="name" class="text ui-widget-content ui-corner-all">
-    <label for="age">Age</label>
-    <input type="text" name="age" id="age" class="text ui-widget-content ui-corner-all">
-    <label for="gender">Gender</label>
-    <input type="text" name="gender" id="gender" class="text ui-widget-content ui-corner-all">
-    <label for="zipcode">zipcode</label>
-    <input type="text" name="zipcode" id="zipcode" class="text ui-widget-content ui-corner-all">
-    <label for="income">Income</label>
-    <input type="text" name="income" id="income" class="text ui-widget-content ui-corner-all">
-    <!--<label for="photo">Photo</label>
-    <input type="text" name="photo" id="photo" class="text ui-widget-content ui-corner-all">-->
-    <label for="description">Description</label>
-    <input type="text" name="description" id="description" class="text ui-widget-content ui-corner-all">
-    <label for="email">Email</label>
-    <input type="text" name="email" id="email" class="text ui-widget-content ui-corner-all">
-    <label for="phone">Phone</label>
-    <input type="text" name="phone" id="phone" class="text ui-widget-content ui-corner-all">
+  <div id="dialog-form" title="Create new user">
+   
+    <form>
+    <fieldset>
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name" class="text ui-widget-content ui-corner-all">
+      <label for="age">Age</label>
+      <input type="text" name="age" id="age" class="text ui-widget-content ui-corner-all">
+      <label for="gender">Gender</label>
+      <input type="text" name="gender" id="gender" class="text ui-widget-content ui-corner-all">
+      <label for="zipcode">zipcode</label>
+      <input type="text" name="zipcode" id="zipcode" class="text ui-widget-content ui-corner-all">
+      <label for="income">Income</label>
+      <input type="text" name="income" id="income" class="text ui-widget-content ui-corner-all">
+      <!--<label for="photo">Photo</label>
+      <input type="text" name="photo" id="photo" class="text ui-widget-content ui-corner-all">-->
+      <label for="description">Description</label>
+      <input type="text" name="description" id="description" class="text ui-widget-content ui-corner-all">
+      <label for="email">Email</label>
+      <input type="text" name="email" id="email" class="text ui-widget-content ui-corner-all">
+      <label for="phone">Phone</label>
+      <input type="text" name="phone" id="phone" class="text ui-widget-content ui-corner-all">
 
 
-    Create new team? <input class="messageCheckbox" type="checkbox" id="checkbox" />
-    <script>
-      $("#checkbox").click( function(){
-         if( $(this).is(':checked')){
-            $( "#dd2" ).hide();  
-            $( "#newTeam" ).show();  
-         } 
-         else{
-            $( "#dd2" ).show();
-            $( "#newTeam" ).hide();
-         }
-      });
-    </script>
-
-
-    <input type="text" id="newTeam" name="newTeam" class="text ui-widget-content ui-corner-all" style="display:none">
-
-    <div id="dd1">
-    What sport are you interested in?
-    <select id="interests">
-      <option></option>
+      Create new team? <input class="messageCheckbox" type="checkbox" id="checkbox" />
       <script>
-          for(var i=0; i<SPORTLIST.length; i++) {  
-              document.write('<option value="' + SPORTLIST[i] +'">' + SPORTLIST[i] + '</option>');
-          }
+        $("#checkbox").click( function(){
+           if( $(this).is(':checked')){
+              $( "#dd2" ).hide();  
+              $( "#newTeam" ).show();  
+           } 
+           else{
+              $( "#dd2" ).show();
+              $( "#newTeam" ).hide();
+           }
+        });
       </script>
-    </select><br>
-    </div>
 
 
-    <div id="dd2">
-      What team would you like to join?
-      <select id="teams">
+      <input type="text" id="newTeam" name="newTeam" class="text ui-widget-content ui-corner-all" style="display:none">
+
+      <div id="dd1">
+      What sport are you interested in?
+      <select id="interests">
         <option></option>
         <script>
-            for(var i=0; i<TEAMS.length; i++) {  
-                document.write('<option value="' + TEAMS[i].teamName +'">' + TEAMS[i].teamName + '</option>');
+            for(var i=0; i<SPORTLIST.length; i++) {  
+                document.write('<option value="' + SPORTLIST[i] +'">' + SPORTLIST[i] + '</option>');
             }
         </script>
       </select><br>
-    </div>
+      </div>
 
-  </fieldset>
-  </form>
+
+      <div id="dd2">
+        What team would you like to join?
+        <select id="teams">
+          <option></option>
+          <script>
+              for(var i=0; i<TEAMS.length; i++) {  
+                  document.write('<option value="' + TEAMS[i].teamName +'">' + TEAMS[i].teamName + '</option>');
+              }
+          </script>
+        </select><br>
+      </div>
+
+    </fieldset>
+    </form>
 
 </div>
 
