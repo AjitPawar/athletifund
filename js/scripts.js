@@ -1,3 +1,5 @@
+$.getScript("js/obj.js")
+
 function initialize() {
     getLocation();
 }
@@ -43,18 +45,25 @@ function success(position) {
         markers = [];
         var bounds = new google.maps.LatLngBounds();
         for (var i = 0, place; place = places[i]; i++) {
-            var contentString = '<div id="content">'+
-                                '<div id="siteNotice">'+
-                                '</div>'+
-                                '<h1 id="firstHeading" class="firstHeading">Uluru</h1>'+
-                                '<div id="bodyContent">'+
-                                '<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
-                                '</div>'+
-                                '</div>';
 
-            var infowindow = new google.maps.InfoWindow({
-                content: contentString
-            });
+            // if name of place is in the list of names
+            // display the team name on the HTML 
+            // if (place.name in 
+            // console.log(place.name[i]);
+            // var x = place.name;
+
+            // var contentString = '<div id="content">'+
+            //                     '<div id="siteNotice">'+
+            //                     '</div>'+
+            //                     '<h3 id="firstHeading" class="firstHeading">' + x + '</h1>'+
+            //                     '<div id="bodyContent">'+
+            //                     '<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
+            //                     '</div>'+
+            //                     '</div>';
+
+            // var infowindow = new google.maps.InfoWindow({
+            //     content: contentString
+            // });
             // var image = {
             //     url: place.icon,
             //     size: new google.maps.Size(71, 71),
@@ -71,6 +80,49 @@ function success(position) {
             });
 
             google.maps.event.addListener(marker, 'click', function() {
+
+                console.log(this.title);
+                var x = this.title;
+                var y = [];    
+                for (var k = 0, t; t = TEAMS[k]; k++) {
+                    console.log(t.homeRec);
+                    if (t.homeRec == x) {
+                        console.log("hi");
+                        y.push(t.teamName);
+                    } 
+                }
+                console.log(y);
+
+                if (y[0])
+                {
+                    var teamName = y[0];
+                    var contentString = '<div id="content">'+
+                                '<div id="siteNotice">'+
+                                '</div>'+
+                                '<h2 id="firstHeading" class="firstHeading">' + x + '</h2>'+
+                                '<div id="bodyContent">'+
+                                '<p><b>' + teamName + '</b> plays here!'+
+                                '</div>'+
+                                '</div>';
+
+                }
+                else {
+
+                var contentString = '<div id="content">'+
+                                '<div id="siteNotice">'+
+                                '</div>'+
+                                '<h3 id="firstHeading" class="firstHeading">' + x + '</h1>'+
+                                '<div id="bodyContent">'+
+                                '<p>No teams play here.' +
+                                '</div>'+
+                                '</div>';
+
+                }
+
+                var infowindow = new google.maps.InfoWindow({
+                content: contentString
+                });
+
                 infowindow.setContent(contentString);
                 infowindow.open(map, this);
             });
@@ -133,3 +185,5 @@ var states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
   'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont',
   'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
 ];
+
+var SearchList = ['Rufus Garcia' ,'Bernadette Warren' ,'Wilbert Thomas','Celia May','Roy Abbott', 'Warriors', 'Little League', 'Hurricanes', 'Pistons', 'Raptors'];

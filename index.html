@@ -95,7 +95,7 @@
               </ul>
             </div>
             <div id="the-basics" style="float: right;">
-            <input class="typeahead form-control" type="text" placeholder="States of USA">
+            <input class="typeahead form-control" type="text" placeholder="Individual/Team Search">
             </div>
             <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span> </span>
           </div>
@@ -104,7 +104,7 @@
     </div>
 </div>
 
-<input id="pac-input" class="controls" type="text" placeholder="Search Box">
+<input id="pac-input" class="controls" type="text" value="Recreation Center">
 <div id="map-canvas"></div>
 <div class="container-fluid" id="main">
   <div class="row">
@@ -277,9 +277,13 @@
         minLength: 1
       },
       {
-        name: 'states',
+        name: 'SearchList',
         displayKey: 'value',
-        source: substringMatcher(states)
+        source: substringMatcher(SearchList)
+      });
+
+      jQuery('#the-basics .typeahead').on('typeahead:selected', function (e, datum) {
+        console.log(datum);
       });
       
       

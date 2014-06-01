@@ -217,6 +217,7 @@ PEOPLE.push(person2);
 PEOPLE.push(person3);
 PEOPLE.push(person4);
 PEOPLE.push(person5);
+PEOPLE.push(person6);
 
 TEAMS.push(team1);
 TEAMS.push(team2);
