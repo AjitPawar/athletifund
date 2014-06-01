@@ -3,7 +3,8 @@
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<meta charset="utf-8">
-		<title>AthletiFund</title>
+		<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+		<title>Athletifund</title>
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -19,6 +20,34 @@
 			function testFunc() {
 				alert("Wow such call");
 			}
+
+
+			//**sheilla's shit
+			var data = {
+  "login":"/login",
+  "home":"/",
+  "user":"/user",
+  "tags":"/tags",
+  "google":"http://google.com"
+};
+
+$('.typeahead').typeahead({
+  minLength:2,
+  updater: function (item) {
+		/* navigate to the selected item */
+		window.location.href = data[item];
+	},
+  source: function (typeahead, query) {
+    var links=[];
+    for (var name in data){
+    	links.push(name); 
+    }
+ 
+    return links;
+	}
+});
+//end 
+
 		</script>
 	</head>
 	<body>
@@ -26,7 +55,7 @@
 
 
 <div class="navbar navbar-custom navbar-fixed-top">
- <div class="navbar-header"><a class="navbar-brand" href="#">AthletiFund</a>
+ <div class="navbar-header"><a class="navbar-brand" href="#" style="font-family: 'Montserrat', sans-serif;">Athletifund</a>
       <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -39,6 +68,9 @@
         <li><a href="#">Sign Up</a></li>
         <li>&nbsp;</li>
       </ul>
+      //sheilla's shit
+      <input type="text" class="typeahead" data-provide="typeahead" data-items="4">
+      //end
       <form class="navbar-form">
         <div class="form-group" style="display:inline;">
           <div class="input-group">
@@ -65,7 +97,7 @@
   <div class="row">
     <div class="col-xs-10"><!--map-canvas will be postioned here--></div>
     <div class="col-xs-2" id="left">
-			
+
       <!-- item list -->
       <div class="title">
         <div><h2 align="center">Recent Fundings</h2></div>
@@ -74,28 +106,28 @@
       
 		<ul id="nt-example1" class="newsticker panel panel-default" style="height: 240px; overflow: hidden; list-style-type: none; padding: 0;">
 			<li style="margin-top: 0px;">News 1. <a href="javascript:void(0);" onclick="testFunc()">Read more...</a>
-				<div class="progress">
+				<div class="progress" style="height: 10px">
 					<div class="progress-bar progress-bar-danger" style="width: 20%">
 						<span class="sr-only"></span>
 					</div>
 				</div>
 			</li>
 			<li style="margin-top: 0px;">News 2. <a href="javascript:void(0);" onclick="testFunc()">Read more...</a>
-				<div class="progress">
+				<div class="progress" style="height: 10px">
 					<div class="progress-bar progress-bar-warning" style="width: 40%">
 						<span class="sr-only"></span>
 					</div>
 				</div>
 			</li>
 			<li style="margin-top: 0px;">News 3. <a href="javascript:void(0);" onclick="testFunc()">Read more...</a>
-				<div class="progress">
+				<div class="progress" style="height: 10px">
 					<div class="progress-bar progress-bar-info" style="width: 60%">
 						<span class="sr-only"></span>
 					</div>
 				</div>
 			</li>
 			<li style="margin-top: 0px;">News 4. <a href="javascript:void(0);" onclick="testFunc()">Read more...</a>
-				<div class="progress">
+				<div class="progress" style="height: 10px">
 					<div class="progress-bar progress-bar-success" style="width: 80%">
 						<span class="sr-only"></span>
 					</div>
@@ -143,7 +175,7 @@
 		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
 		<script src="js/scripts.js"></script>
 		<script src="js/jquery.newsTicker.min.js"></script>
-		
+
 		<script>
 			$('.newsticker').newsTicker({
 				row_height: 22,
@@ -156,7 +188,8 @@
 				prevButton:  $('#prev-button'),
 				nextButton:  $('#next-button'),
 			});
+			
 		</script>
-		
+
 	</body>
 </html>

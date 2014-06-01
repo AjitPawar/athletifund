@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<meta charset="utf-8">
-		<title>AthletiFund</title>
+		<title>Individual Profile</title>
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -15,6 +15,7 @@
 		<link href="css/font-awesome.min.css" rel="stylesheet">
 		<link href="css/prism.css" rel="stylesheet">
 		<link href="css/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css">
+		<link href="js/paypal-button.min.js" rel="stylesheet" type="text/css">
 		<script>
 			function testFunc() {
 				alert("Wow such call");
@@ -22,18 +23,52 @@
 		</script>
 	</head>
 	<body>
+		
+<div class="navbar navbar-custom navbar-fixed-top">
+ <div class="navbar-header"><a class="navbar-brand" href="#">AthletiFund</a>
+      <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="#">Sponsor</a></li>
+        <li><a href="#">Sign Up</a></li>
+        <li>&nbsp;</li>
+      </ul>
+      <form class="navbar-form">
+        <div class="form-group" style="display:inline;">
+          <div class="input-group">
+            <div class="input-group-btn">
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-chevron-down"></span></button>
+              <ul class="dropdown-menu">
+                <li><a href="#">Basketball</a></li>
+                <li><a href="#">Hockey</a></li>
+                <li><a href="#">Soccer</a></li>
+                <li><a href="#">Football</a></li>
+              </ul>
+            </div>
+            <input type="text" class="form-control" placeholder="What are you searching for?">
+            <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span> </span>
+          </div>
+        </div>
+      </form>
+    </div>
+</div>
 
 <hr>
 <div class="container">
 	<div class="row">
 		<div class="col-sm-3"><!--left col-->
 			<div class="col-sm-10"><h1><b>Doge</b></h1></div>
-			<div class="col-sm-10"><a href="" class="pull-left"><img title="profile image" src="doge.jpeg" width="100%"></a></div>
+			<div class="col-sm-10"><a href="" class="pull-left"><img title="profile image" src="img/johnny.jpg" width="100%"></a></div>
         </div>
     	<div class="col-sm-9">
 			<h2>Description</h2>
 			<span class="pull-right">
-				 u are 1 ****ing cheeky kunt mate i swear i am goin 2 wreck u i swear on my mums life and i no u are scared lil bitch gettin your mates to send me messages saying dont meet up coz u r sum big bastard with muscles lol ****in sad mate really sad jus shows what a scared lil gay boy u are and whats all this crap ur mates sendin me about sum bodybuildin website that 1 of your faverite places to look at men u lil ****in gay boy fone me if u got da balls cheeky prick see if u can step up lil queer
+				 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 			</span>
         </div>
     </div>
@@ -42,13 +77,14 @@
   		<div class="col-sm-3"><!--left col-->
               
           <ul class="list-group">
-            <li class="list-group-item text-muted">Profile</li>
-            <li class="list-group-item text-right"><span class="pull-left"><strong>Name</strong></span> Gooby</li>
-            <li class="list-group-item text-right"><span class="pull-left"><strong>Age</strong></span> Yesterday</li>
-            <li class="list-group-item text-right"><span class="pull-left"><strong>Gender</strong></span> Doge</li>
-            <li class="list-group-item text-right"><span class="pull-left"><strong>Sports Interests</strong></span> Knief en murder en raep</li>
-            <li class="list-group-item text-right"><span class="pull-left"><strong>Teams</strong></span> Team Dolan</li>
-            
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Name</strong></span> Johnny</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Age</strong></span> 15</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Gender</strong></span> Male</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Sports Interests</strong></span> Basketball, Soccer</li>
+          </ul>
+          <strong>Teams:</strong>
+          <ul style="list-style-type: none; padding-left: 15px;">
+			<li><span class="pull-left active"><a href="#">Team Unite</a></span></li>
           </ul>
           
         </div>
@@ -59,132 +95,38 @@
               <h4>Funding Requests</h4>
               
               <div class="table-responsive">
-                <table class="table table-hover">
-                  
-                  <tbody>
+                <table class="table table-hover" border="0">
+                  <tbody id="fundingRequestsTable">
                     <tr>
-                      <td><i class="pull-right fa fa-edit"></i> Today, 1:00 - Jeff Manzi liked your post.</td>
-                    </tr>
-                    <tr>
-                      <td><i class="pull-right fa fa-edit"></i> Today, 12:23 - Mark Friendo liked and shared your post.</td>
-                    </tr>
-                    <tr>
-                      <td><i class="pull-right fa fa-edit"></i> Today, 12:20 - You posted a new blog entry title "Why social media is".</td>
-                    </tr>
-                    <tr>
-                      <td><i class="pull-right fa fa-edit"></i> Yesterday - Karen P. liked your post.</td>
-                    </tr>
-                    <tr>
-                      <td><i class="pull-right fa fa-edit"></i> 2 Days Ago - Philip W. liked your post.</td>
-                    </tr>
-                    <tr>
-                      <td><i class="pull-right fa fa-edit"></i> 2 Days Ago - Jeff Manzi liked your post.</td>
+					  <td><b>12-01-2015</b></td>
+                      <td>Today, 12:23 - Mark Friendo liked and shared your post.</td>
+                      <td align="right">$</td>
+                      <td>
+							<input type="number" width="5px"></input>
+                      </td>
+                      <td>
+							<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="test">
+								<input type="hidden" name="cmd" value="_s-xclick">
+								<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+								">
+								<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+								<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+							</form>
+                      </td>
                     </tr>
                   </tbody>
                 </table>
               </div>
               
              </div><!--/tab-pane-->
-             <div class="tab-pane" id="messages">
-               
-               <h2></h2>
-               
-               <ul class="list-group">
-                  <li class="list-group-item text-muted">Inbox</li>
-                  <li class="list-group-item text-right"><a href="#" class="pull-left">Here is your a link to the latest summary report from the..</a> 2.13.2014</li>
-                  <li class="list-group-item text-right"><a href="#" class="pull-left">Hi Joe, There has been a request on your account since that was..</a> 2.11.2014</li>
-                  <li class="list-group-item text-right"><a href="#" class="pull-left">Nullam sapien massaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014</li>
-                  <li class="list-group-item text-right"><a href="#" class="pull-left">Thllam sapien massaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014</li>
-                  <li class="list-group-item text-right"><a href="#" class="pull-left">Wesm sapien massaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014</li>
-                  <li class="list-group-item text-right"><a href="#" class="pull-left">For therepien massaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014</li>
-                  <li class="list-group-item text-right"><a href="#" class="pull-left">Also we, havesapien massaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014</li>
-                  <li class="list-group-item text-right"><a href="#" class="pull-left">Swedish chef is assaortor. A lobortis vitae, condimentum justo...</a> 2.11.2014</li>
-                  
-                </ul> 
-               
-             </div><!--/tab-pane-->
-             <div class="tab-pane" id="settings">
-            		
-               	
-                  <hr>
-                  <form class="form" action="##" method="post" id="registrationForm">
-                      <div class="form-group">
-                          
-                          <div class="col-xs-6">
-                              <label for="first_name"><h4>First name</h4></label>
-                              <input type="text" class="form-control" name="first_name" id="first_name" placeholder="first name" title="enter your first name if any.">
-                          </div>
-                      </div>
-                      <div class="form-group">
-                          
-                          <div class="col-xs-6">
-                            <label for="last_name"><h4>Last name</h4></label>
-                              <input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name" title="enter your last name if any.">
-                          </div>
-                      </div>
-          
-                      <div class="form-group">
-                          
-                          <div class="col-xs-6">
-                              <label for="phone"><h4>Phone</h4></label>
-                              <input type="text" class="form-control" name="phone" id="phone" placeholder="enter phone" title="enter your phone number if any.">
-                          </div>
-                      </div>
-          
-                      <div class="form-group">
-                          <div class="col-xs-6">
-                             <label for="mobile"><h4>Mobile</h4></label>
-                              <input type="text" class="form-control" name="mobile" id="mobile" placeholder="enter mobile number" title="enter your mobile number if any.">
-                          </div>
-                      </div>
-                      <div class="form-group">
-                          
-                          <div class="col-xs-6">
-                              <label for="email"><h4>Email</h4></label>
-                              <input type="email" class="form-control" name="email" id="email" placeholder="you@email.com" title="enter your email.">
-                          </div>
-                      </div>
-                      <div class="form-group">
-                          
-                          <div class="col-xs-6">
-                              <label for="email"><h4>Location</h4></label>
-                              <input type="email" class="form-control" id="location" placeholder="somewhere" title="enter a location">
-                          </div>
-                      </div>
-                      <div class="form-group">
-                          
-                          <div class="col-xs-6">
-                              <label for="password"><h4>Password</h4></label>
-                              <input type="password" class="form-control" name="password" id="password" placeholder="password" title="enter your password.">
-                          </div>
-                      </div>
-                      <div class="form-group">
-                          
-                          <div class="col-xs-6">
-                            <label for="password2"><h4>Verify</h4></label>
-                              <input type="password" class="form-control" name="password2" id="password2" placeholder="password2" title="enter your password2.">
-                          </div>
-                      </div>
-                      <div class="form-group">
-                           <div class="col-xs-12">
-                                <br>
-                              	<button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
-                               	<button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
-                            </div>
-                      </div>
-              	</form>
-              </div>
-               
-              </div><!--/tab-pane-->
           </div><!--/tab-content-->
-
         </div><!--/col-9-->
     </div><!--/row-->
 
 	<!-- script references -->
 		<script src="js/jquery-1.11.1.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
 		<script src="js/scripts.js"></script>
 		<script src="js/jquery.newsTicker.min.js"></script>
 		
@@ -200,6 +142,14 @@
 				prevButton:  $('#prev-button'),
 				nextButton:  $('#next-button'),
 			});
+			
+			var fundingRequests = document.getElementById('fundingRequestsTable');
+			for(var i = 0; i < 10; i++) {
+				var oneRow = document.createElement('tr');
+				oneRow.innerHTML = '<td><b>12-01-2015</b></td><td>Today, 12:23 - Mark Friendo liked and shared your post.</td><td align="right">$</td><td><input type="number" width="5px"></input></td><td><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="test"><input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----"><input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"><img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"></form></td> ';
+                fundingRequests.appendChild(oneRow);
+				
+			}
 		</script>
 		
 	</body>
