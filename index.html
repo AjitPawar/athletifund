@@ -38,7 +38,8 @@
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li><a href="#">Sponsor</a></li>
-        <li><a href="#">Sign Up</a></li>
+        <li><a href="#" data-toggle="modal" data-target="#myModal">Sign Up</a></li>
+        
         <li>&nbsp;</li>
       </ul>
       <form class="navbar-form">
@@ -135,6 +136,33 @@
     </div>
     <div class="col-xs-4"><!--map-canvas will be postioned here--></div>
     
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+      <form id="InfroText" method="POST">
+  
+      <input type="hidden" name="InfroText" value="1">
+  
+      <table>
+        <tbody><tr><td>Title</td><td><input type="text" name="title" id="title" style="width:300px"><span class="hide help-inline">This is required</span></td></tr>
+        <tr><td>Introudction</td><td><textarea name="contect" style="width:300px;height:100px"></textarea></td></tr>
+      </tbody></table>
+      </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
   </div>
 </div>
 
