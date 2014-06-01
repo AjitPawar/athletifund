@@ -107,9 +107,11 @@ function search(searchText) {
 		if (team.teamName.search(searchText) > -1) {
 			results.push(team);
 			}
-		for (var keyword in team.sports) {
-			if (keyword.search(searchText) > -1) {
-				results.push(team);
+		else {
+			for (var keyword in team.sports) {
+				if (keyword.search(searchText) > -1) {
+					results.push(team);
+					}
 				}
 			}
 		}
@@ -118,14 +120,18 @@ function search(searchText) {
 		if (person.name.search(searchText) > -1) {
 			results.push(person);
 			}
-		for (var keyword in person.sportsInterests) {
-			if (keyword.search(searchText) > -1) {
-				results.push(person);
+		else {
+			for (var keyword in person.sportsInterests) {
+				if (keyword.search(searchText) > -1) {
+					results.push(person);
+					}
 				}
 			}
 		}
+		
 	return results;
 	}
+
 
 
 // **** TEST DATA ****
