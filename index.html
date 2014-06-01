@@ -53,7 +53,9 @@
                 <li><a href="#">Football</a></li>
               </ul>
             </div>
-            <input type="text" class="form-control" placeholder="What are you searching for?">
+            <div id="the-basics">
+            <input class="typeahead form-control" type="text" placeholder="States of USA">
+            </div>
             <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span> </span>
           </div>
         </div>
@@ -144,6 +146,7 @@
 		<script src="js/bootstrap.min.js"></script>
 		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
 		<script src="js/scripts.js"></script>
+    <script src="js/typeahead.bundle.js"></script>
 		<script src="js/jquery.newsTicker.min.js"></script>
 
 		<script>
@@ -158,6 +161,17 @@
 				prevButton:  $('#prev-button'),
 				nextButton:  $('#next-button'),
 			});
+
+      $('#the-basics .typeahead').typeahead({
+        hint: true,
+        highlight: true,
+        minLength: 1
+      },
+      {
+        name: 'states',
+        displayKey: 'value',
+        source: substringMatcher(states)
+      });
 			
 		</script>
 
