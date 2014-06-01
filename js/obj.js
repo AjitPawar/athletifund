@@ -119,6 +119,7 @@ function search(searchText) {
 				}
 			}
 		}
+	return results;
 	}
 
 
