@@ -56,6 +56,11 @@ function addMember(team, newMember) {
 		"to join a waitlist.";
 		alert(message);
 		}
+	else if ((team.gender != "N") && (team.gender!= newMember.gender)) ||
+	 (newMember.age > team.ageRange[1]) || (newMember.age < team.ageRange[0]) {
+		var message = "You do not meet the criteria of age or gender to join " + team.teamName;
+		alert(message);
+		}	
 	else {
 		newMember.teams.push(team);
 		team.members.push(newMember);
