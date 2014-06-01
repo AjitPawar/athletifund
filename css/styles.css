@@ -7,31 +7,30 @@ in your HTML file.
 license: MIT
 author: bootply.com
 */
-
-
-html,body{
-    height:100%;
+html,body {
+    height: 100%;
 }
 
-body{
-    padding-top:50px; /*padding for navbar*/
+body {
+    padding-top: 50px;
+/*padding for navbar*/
 }
 
 .navbar-custom .icon-bar {
-    background-color:#fff;
+    background-color: #fff;
 }
 
 .navbar-custom {
     background-color: #168ccc;
-    color:#fff;
+    color: #fff;
 }
 
 .navbar-custom li>a:hover,.navbar-custom li>a:focus {
-    background-color:#49bfff;
+    background-color: #49bfff;
 }
 
-.navbar-custom a{
-    color:#fefefe;
+.navbar-custom a {
+    color: #fefefe;
 }
 
 .navbar-custom .form-control:focus {
@@ -41,24 +40,79 @@ body{
     box-shadow: inset 0 0 0;
 }
 
-#main, #main>.row {
-    height:100%;
+#main,#main>.row {
+    height: 100%;
 }
 
 #main>.row {
-    overflow-y:scroll;
+    overflow-y: scroll;
 }
 
 #left {
-    height:100%;
+    height: 100%;
 }
 
 #map-canvas {
-    width:82.6333%;
-    height:calc(100% - 0);
-    position:absolute;
-    left:0px;
-    top:50px;
-    bottom:0;
-    overflow:hidden;
+    width: 82.6333%;
+    height: calc(100%-0);
+    position: absolute;
+    left: 0;
+    top: 50px;
+    bottom: 0;
+    overflow: hidden;
+}
+
+html,body,#map-canvas {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.controls {
+    margin-top: 16px;
+    border: 1px solid transparent;
+    border-radius: 2px 0 0 2px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    height: 32px;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+#pac-input {
+    background-color: #fff;
+    padding: 0 11px 0 13px;
+    width: 400px;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+    text-overflow: ellipsis;
+}
+
+#pac-input:focus {
+    border-color: #4d90fe;
+    margin-left: -1px;
+    padding-left: 14px;
+/* Regular padding-left + 1. */
+    width: 401px;
+}
+
+.pac-container {
+    font-family: Roboto;
+}
+
+#type-selector {
+    color: #fff;
+    background-color: #4d90fe;
+    padding: 5px 11px 0;
+}
+
+#type-selector label {
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: 300;
+}
+
+#target {
+    width: 345px;
 }
