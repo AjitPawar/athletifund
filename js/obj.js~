@@ -29,7 +29,6 @@ function Person(name, age, gender, zipcode, income, sportsInterests, photo,
 	this.requests = requests; //list of Request objects
 	this.amount = 0;
 	this.amountNeed = 0;
-	this.need = need
 	}
 
 	
@@ -163,49 +162,49 @@ var sports5_ls = ["Basketball"];
 var mailing_ls = ["generous@bye.com"];
 var mailing2_ls = ["cashmoney@bye.com"];
 
-var person1 = new Person("Rufus Garcia", 10, "M", "M4B2K1", 3.50, sports3_ls, "img/D.jpg", "Lorizzle ipsizzle dolor sit amet, shiznit the bizzle sizzle. sapizzle velizzle, shizznit volutpizzle, da bomb pimpin’, fizzle vizzle, arcu. Ass eget tortizzle. Gizzle eros. Boom shackalack izzle dolor dapibizzle turpis tempizzle fo shizzle mah nizzle fo rizzle, mah home g-dizzle. Maurizzle mah nizzle nibh et turpizzle. Yippiyo izzle tortizzle. Gizzle rhoncizzle dang.", 
-	0, ls_teams, "rufisiskool@email.com", "4152232211", ls_requests, 0, 120);
+var person1 = new Person("Rufus Garcia", 10, "M", "M4B2K1", 3.50, sports3_ls, "img/D.jpg", "I'm some guy", 
+	0, ls_teams, "hi@bye.com", "4152232211", ls_requests, 0, 120);
 
-var person2 = new Person("Bernadette Warren", 12, "F", "M1T2M5", 1000, sports3_ls, "img/D.jpg", "Lorizzle ipsizzle dolor sit amet, shiznit the bizzle sizzle. sapizzle velizzle, shizznit volutpizzle, da bomb pimpin’, fizzle vizzle, arcu. Ass eget tortizzle. Gizzle eros. Boom shackalack izzle dolor dapibizzle turpis tempizzle fo shizzle mah nizzle fo rizzle, mah home g-dizzle. Maurizzle mah nizzle nibh et turpizzle. Yippiyo izzle tortizzle. Gizzle rhoncizzle dang.", 
-	1, ls_teams, "bernieiskool@email.com", "1231231233",	ls_requests, 0, 60);
+var person2 = new Person("Bernadette Warren", 12, "F", "M1T2M5", 1000, sports3_ls, "img/D.jpg", "I'm some girl also", 
+	1, ls_teams, "hello@bye.com", "1231231233",	ls_requests, 0, 60);
 
-var person3 = new Person("Wilbert Thomas", 15, "M", "M4B2K1", 3.50, sports5_ls, "img/D.jpg", "Lorizzle ipsizzle dolor sit amet, shiznit the bizzle sizzle. sapizzle velizzle, shizznit volutpizzle, da bomb pimpin’, fizzle vizzle, arcu. Ass eget tortizzle. Gizzle eros. Boom shackalack izzle dolor dapibizzle turpis tempizzle fo shizzle mah nizzle fo rizzle, mah home g-dizzle. Maurizzle mah nizzle nibh et turpizzle. Yippiyo izzle tortizzle. Gizzle rhoncizzle dang.", 
-	0, ls_teams2, "wiliskool@email.com", "4152232211", ls_requests, 0, 80);
+var person3 = new Person("Wilbert Thomas", 15, "M", "M4B2K1", 3.50, sports5_ls, "img/D.jpg", "nice guy", 
+	0, ls_teams2, "C@bye.com", "4152232211", ls_requests, 0, 80);
 
-var person4 = new Person("Celia May", 16, "F", "M4B1B3", 3.50, sports5_ls, "img/D.jpg", "Lorizzle ipsizzle dolor sit amet, shiznit the bizzle sizzle. sapizzle velizzle, shizznit volutpizzle, da bomb pimpin’, fizzle vizzle, arcu. Ass eget tortizzle. Gizzle eros. Boom shackalack izzle dolor dapibizzle turpis tempizzle fo shizzle mah nizzle fo rizzle, mah home g-dizzle. Maurizzle mah nizzle nibh et turpizzle. Yippiyo izzle tortizzle. Gizzle rhoncizzle dang.", 
-	1, ls_teams2, "celiaiskool@email.com", "1111111111", ls_requests, 0, 90);
+var person4 = new Person("Celia May", 16, "F", "M4B1B3", 3.50, sports5_ls, "img/D.jpg", "kool gal", 
+	1, ls_teams2, "D@bye.com", "1111111111", ls_requests, 0, 90);
 
-var person5 = new Person("Roy Abbott", 16, "M", "M1T2M5", 3.50, sports5_ls, "img/D.jpg", "Lorizzle ipsizzle dolor sit amet, shiznit the bizzle sizzle. sapizzle velizzle, shizznit volutpizzle, da bomb pimpin’, fizzle vizzle, arcu. Ass eget tortizzle. Gizzle eros. Boom shackalack izzle dolor dapibizzle turpis tempizzle fo shizzle mah nizzle fo rizzle, mah home g-dizzle. Maurizzle mah nizzle nibh et turpizzle. Yippiyo izzle tortizzle. Gizzle rhoncizzle dang.", 
-	0, ls_teams2, "royiskool@email.com", "2222222222", ls_requests, 0, 50);
+var person5 = new Person("Roy Abbott", 16, "M", "M1T2M5", 3.50, sports5_ls, "img/D.jpg", "dude guy", 
+	0, ls_teams2, "E@bye.com", "2222222222", ls_requests, 0, 50);
 
 
 var membership_ls = [person1,person2];
 var membership2_ls = [person3,person4, person5];
 
 var team1 = new Team("Warriors", "Rugby", (9,13), "F", 25,
- person2, 25, "University Settlement Recreation Centre", "Glory is nice.",
+ person2, 25, "University Settlement Recreation Centre", "small people. violent sports.",
   "img/friendship.jpg", mailing_ls,	"hello@bye.com", sports2_ls, membership_ls);
 
 
 var team2 = new Team("Little League", (15,18), "N", 3, person4,
-	5, "Trinity Community Recreation Centre", "Glory is nice.", "friendship.jpg", mailing2_ls,
+	5, "Trinity Community Recreation Centre", "sparkley", "teamsportz.jpg", mailing2_ls,
 	"img/friendship.jpg", sports_ls, membership2_ls);
 
 var team3 = new Team("Hurricanes", (15,18), "N", 3, person4,
-	5, "recplace", "Glory is nice.", "friendship.jpg", mailing2_ls,
+	5, "recplace", "sparkley", "teamsportz.jpg", mailing2_ls,
 	"img/friendship.jpg", sports_ls, membership2_ls);
 
 var team4 = new Team("Pistons", (15,18), "N", 3, person4,
-	5, "Jimmy Simpson Recreation Centre", "Glory is nice.", "friendship.jpg", mailing2_ls,
+	5, "Jimmy Simpson Recreation Centre", "sparkley", "teamsportz.jpg", mailing2_ls,
 	"img/friendship.jpg", sports_ls, membership2_ls);
 
 var team5 = new Team("Raptors", (15,18), "N", 3, person4,
-	5, "Huron Recreation Centre", "Glory is nice.", "friendship.jpg", mailing2_ls,
+	5, "Huron Recreation Centre", "sparkley", "teamsportz.jpg", mailing2_ls,
 	"img/friendship.jpg", sports_ls, membership2_ls);
 
 
-var req1 = new Request(666, "14-06-2014", 0, mailing2_ls, "Mr. Ka$h Money");
-var req2 = new Request(40, "30-08-2014", 0,  mailing_ls, "Mr. Ka$h Money");
+var req1 = new Request(666, "14-06-2014", 0, mailing2_ls, "Kool Guy");
+var req2 = new Request(40, "30-08-2014", 0,  mailing_ls, "Mr. Man");
 
 
 person1.teams.push(team1);

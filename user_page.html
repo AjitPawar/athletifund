@@ -18,6 +18,10 @@
 		<link href="css/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css">
 		<link href="js/paypal-button.min.js" rel="stylesheet" type="text/css">
 
+		<script src="js/jquery-1.10.2.js"></script>
+  		<script src="js/jquery-ui.js"></script>
+  		<script src="js/obj.js"></script>
+
 	</head>
 	<body>
 		
@@ -44,10 +48,26 @@
               <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-chevron-down"></span></button>
 -->
               <ul class="dropdown-menu">
+				<li><a href="#">Archery</a></li>
+                <li><a href="#">Badminton</a></li>
+                <li><a href="#">Baseball</a></li>
                 <li><a href="#">Basketball</a></li>
-                <li><a href="#">Hockey</a></li>
-                <li><a href="#">Soccer</a></li>
+                <li><a href="#">Dance</a></li>
+                <li><a href="#">Dodgeball</a></li>
+                <li><a href="#">Floor Hockey</a></li>
                 <li><a href="#">Football</a></li>
+                <li><a href="#">Frisbee</a></li>
+                <li><a href="#">Gymnastics</a></li>
+                <li><a href="#">Judo</a></li>
+                <li><a href="#">Karate</a></li>
+                <li><a href="#">Lacrosse</a></li>
+                <li><a href="#">Rugby</a></li>
+                <li><a href="#">Soccer</a></li>
+                <li><a href="#">Table Tennis</a></li>
+                <li><a href="#">Taekwondo</a></li>
+                <li><a href="#">Tennis</a></li>
+                <li><a href="#">Volleyball</a></li>
+                <li><a href="#">Wrestling</a></li>
               </ul>
             </div>
             <div id="the-basics" style="float: right;">
@@ -68,10 +88,10 @@
 			<div class="col-sm-10"><h1 id="userName"><b>Johnny</b></h1></div>
 			<div class="col-sm-10"><a href="" class="pull-left"><img title="profile image" src="img/johnny.jpg" width="100%"></a></div>
         </div>
-    	<div class="col-sm-9">
+    	<div id="left5" class="col-sm-9">
 			<h2>Description</h2>
 			<span class="pull-right">
-				 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+				 I love sports, but I don't have equipment.
 			</span>
         </div>
     </div>
@@ -80,10 +100,10 @@
   		<div class="col-sm-3"><!--left col-->
               
           <ul class="list-group">
-            <li class="list-group-item text-right"><span class="pull-left"><strong>Name</strong></span> Johnny</li>
-            <li class="list-group-item text-right"><span class="pull-left"><strong>Age</strong></span> 15</li>
-            <li class="list-group-item text-right"><span class="pull-left"><strong>Gender</strong></span> Male</li>
-            <li class="list-group-item text-right"><span class="pull-left"><strong>Sports Interests</strong></span> Basketball, Soccer, Skiing</li>
+            <li id = "left1" class="list-group-item text-right"><span class="pull-left"><strong>Name</strong></span> <p>Johnny</p> </li>
+            <li id = "left2" class="list-group-item text-right"><span class="pull-left"><strong>Age</strong></span> <p>15 </p></li>
+            <li id = "left3" class="list-group-item text-right"><span class="pull-left"><strong>Gender</strong></span> <p>Male </p></li>
+            <li id = "left4" class="list-group-item text-right"><span class="pull-left"><strong>Sports Interests</strong></span> <p>Basketball, Soccer, Skiing </p></li>
           </ul>
           <strong>Teams:</strong>
           <ul style="list-style-type: none; padding-left: 15px;">
@@ -137,15 +157,7 @@
 								</table>
 								<br/>
 								<div>
-<!--
-									<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="test">
-										<input type="hidden" name="cmd" value="_s-xclick">
-										<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
-										">
-										<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-										<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-									</form>
--->
+
 									<script 
 										data-env="sandbox" 
 										data-callback="http://localhost:8000/" 
@@ -195,6 +207,24 @@
                 fundingRequests.appendChild(oneRow);
 				
 			}
+
+			
+			for(var i=0; i<PEOPLE.length; i++){
+				if(current != PEOPLE[i].name) continue;
+				$('#userName').text(PEOPLE[i].name);
+				$('#left1').find('p:first').text(PEOPLE[i].name);
+				$('#left2').find('p:first').text(PEOPLE[i].age);
+				$('#left3').find('p:first').text(PEOPLE[i].gender);
+
+				var str="";
+				for(var j=0; j<PEOPLE[i].sportsInterests.length; j++){
+					str += PEOPLE[i].sportsInterests[j] + ", ";
+				}
+				$('#left4').find('p:first').text(str);				
+			}
+
+		
+
 		</script>
 		
 	</body>

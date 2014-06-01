@@ -75,7 +75,7 @@
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li><a href="#">Sponsor</a></li>
+        <li><a href="#" data-toggle="modal" data-target="#myModal2">Sponsor</a></li>
         <li><a href="#" data-toggle="modal" data-target="#myModal">Sign Up</a></li>
         
         <li>&nbsp;</li>
@@ -88,14 +88,30 @@
               <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-chevron-down"></span></button>
 -->
               <ul class="dropdown-menu">
+				<li><a href="#">Archery</a></li>
+                <li><a href="#">Badminton</a></li>
+                <li><a href="#">Baseball</a></li>
                 <li><a href="#">Basketball</a></li>
-                <li><a href="#">Hockey</a></li>
-                <li><a href="#">Soccer</a></li>
+                <li><a href="#">Dance</a></li>
+                <li><a href="#">Dodgeball</a></li>
+                <li><a href="#">Floor Hockey</a></li>
                 <li><a href="#">Football</a></li>
+                <li><a href="#">Frisbee</a></li>
+                <li><a href="#">Gymnastics</a></li>
+                <li><a href="#">Judo</a></li>
+                <li><a href="#">Karate</a></li>
+                <li><a href="#">Lacrosse</a></li>
+                <li><a href="#">Rugby</a></li>
+                <li><a href="#">Soccer</a></li>
+                <li><a href="#">Table Tennis</a></li>
+                <li><a href="#">Taekwondo</a></li>
+                <li><a href="#">Tennis</a></li>
+                <li><a href="#">Volleyball</a></li>
+                <li><a href="#">Wrestling</a></li>
               </ul>
             </div>
             <div id="the-basics" style="float: right;">
-            <input class="typeahead form-control" type="text" placeholder="States of USA">
+            <input class="typeahead form-control" type="text" placeholder="Individual/Team Search">
             </div>
             <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span> </span>
           </div>
@@ -104,7 +120,7 @@
     </div>
 </div>
 
-<input id="pac-input" class="controls" type="text" placeholder="Search Box">
+<input id="pac-input" class="controls" type="text" value="Recreation Center">
 <div id="map-canvas"></div>
 <div class="container-fluid" id="main">
   <div class="row">
@@ -161,22 +177,21 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        <h4 class="modal-title" id="myModalLabel" align: "center">Register to qualify for athletic funding</h4>
       </div>
       <div class="modal-body">
     
-
     <!-- start of dialog-form -->
     <div id="dialog-form" title="Create new user">
     <form>
-		  <fieldset>
+		 <fieldset style="text-align:right;">
 		    <label for="name">Name</label>
 		    <input type="text" name="name" id="name" class="text ui-widget-content ui-corner-all"><br>
 		    <label for="age">Age</label>
 		    <input type="text" name="age" id="age" class="text ui-widget-content ui-corner-all"><br>
 		    <label for="gender">Gender</label>
 		    <input type="text" name="gender" id="gender" class="text ui-widget-content ui-corner-all"><br>
-		    <label for="zipcode">zipcode</label>
+		    <label for="zipcode">Postal code</label>
 		    <input type="text" name="zipcode" id="zipcode" class="text ui-widget-content ui-corner-all"><br>
 		    <label for="income">Income</label>
 		    <input type="text" name="income" id="income" class="text ui-widget-content ui-corner-all"><br>
@@ -186,9 +201,9 @@
 		    <input type="text" name="email" id="email" class="text ui-widget-content ui-corner-all"><br>
 		    <label for="phone">Phone</label>
 		    <input type="text" name="phone" id="phone" class="text ui-widget-content ui-corner-all"><br>
-
-
+		    <br>
 		    Create new team? <input class="messageCheckbox" type="checkbox" id="checkbox" />
+		    <br>
 		    <script>
 		      $("#checkbox").click( function(){
 		         if( $(this).is(':checked')){
@@ -206,7 +221,7 @@
 		    <input type="text" id="newTeam" name="newTeam" class="text ui-widget-content ui-corner-all" style="display:none">
 
 		    <div id="dd1">
-		    What sport are you interested in?
+		    Which sports are you interested in?
 		    <select id="interests">
 		      <option></option>
 		      <script>
@@ -232,6 +247,47 @@
 
 		  </fieldset>
 		  </form>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" onclick="return doModal();">Submit</button>
+      </div>
+    </div>
+
+
+    </div>
+    <!-- end of dialog-form -->
+
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel" align: "center">Sponsor a child or youth today and give them a chance to play</h4>
+      </div>
+      <div class="modal-body">
+    
+
+    <!-- start of dialog-form -->
+    <div id="dialog-form" title="Create new user">
+    <form>
+      <fieldset style="text-align:right;">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" class="text ui-widget-content ui-corner-all"><br>
+        <label for="age">Age</label>
+        <input type="text" name="description" id="description" class="text ui-widget-content ui-corner-all"><br>
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" class="text ui-widget-content ui-corner-all"><br>
+        <label for="phone">Phone</label>
+        <input type="text" name="phone" id="phone" class="text ui-widget-content ui-corner-all"><br>
+
+      </fieldset>
+      </form>
       </div>
 
       <div class="modal-footer">
@@ -277,14 +333,18 @@
         minLength: 1
       },
       {
-        name: 'states',
+        name: 'SearchList',
         displayKey: 'value',
-        source: substringMatcher(states)
+        source: substringMatcher(SearchList)
+      });
+
+      jQuery('#the-basics .typeahead').on('typeahead:selected', function (e, datum) {
+        console.log(datum);
       });
       
       
 			var newsFeed = document.getElementById('nt-example1');
-			for(var i = 0; i < 15; i++) {
+			for(var i = 0; i < len(array); i++) {
 				var oneRow = document.createElement('li');
 				var amount = (20 + 6*i);
 				var colour;
