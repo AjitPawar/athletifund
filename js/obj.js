@@ -120,47 +120,71 @@ function search(searchText) {
 
 
 var ls_teams = [];
+var ls_teams2 = [];
+var ls_teams3 = [];
 var ls_requests = [];
+var sports_ls = ["Dance","Gymnastics"];
+var sports2_ls = ["Rugby"];
+var sports3_ls = ["Basketball", "Rugby"];
+var sports4_ls = ["Rugby"];
+var sports5_ls = ["Basketball"];
+var mailing_ls = ["generous@bye.com"];
+var mailing2_ls = ["cashmoney@bye.com"];
+
+var person1 = new Person("A", 10, "F", "L5B2Y7", 3.50, sports3_ls, "img/D.jpg", "I'm some girl", 
+	0, ls_teams, "hi@bye.com", "4152232211", ls_requests);
+
+var person2 = new Person("B", 12, "F", "L5B2Y7", 1000, sports3_ls, 
+	"img/D.jpg", "I'm some girl also", 1, ls_teams, "hello@bye.com", "1231231233",
+	ls_requests);
+
+var person3 = new Person("C", 15, "M", "L5B2Y7", 3.50, sports5_ls, 
+	"img/D.jpg", "nice guy", 0, ls_teams2, "C@bye.com", "4152232211",
+	ls_requests);
+
+var person4 = new Person("D", 16, "F", "L5B2Y7", 3.50, sports5_ls, 
+	"img/D.jpg", "kool guy", 1, ls_teams2, "D@bye.com", "1111111111",
+	ls_requests);
+
+var person5 = new Person("E", 16, "M", "L5B2Y7", 3.50, sports5_ls, 
+	"img/D.jpg", "dude guy", 0, ls_teams2, "E@bye.com", "2222222222",
+	ls_requests);
+
+var person6 = new Person("F", 18, "M", "L5B2Y7", 3.50, sports5_ls, 
+	"img/D.jpg", "hi guy", 0, ls_teams3, "F@bye.com", "3333333333",
+	ls_requests);
 
 
-var person1 = {name:"A", age:10, gender:"F", income:3.50, sportsInterests:["Basketball", "Rugby"], photo:"img/D.jpg", description:"I'm some girl", 
-	isManager:0, teams:ls_teams, email:"hi@bye.com", phone:"4152232211", requests:ls_requests};
+var team1 = new Team("Preteen Girls' Rugby", (9,13), "F", 25,
+ person2, 25, "recreationcentre1", "small people. violent sports.",
+  "img/friendship.jpg", mailing_ls,	"hello@bye.com", sports2_ls, membership_ls);
 
-var person2 = {name:"B", age:12, gender:"F", income:1000, sportsInterests:["Dance", "Rugby"], 
-	photo:"img/D.jpg", description:"I'm some girl also", isManager:1, ls_teams, email:"hello@bye.com", phone:"1231231233",
-	ls_requests};
 
-var team1 = {teamName:"Preteen Girls' Rugby", ageRange:(9,13), gender:"F", maxEnrollment:25,
- teamManager:person2, minEntryFee:25, homeRec:"recreationcentre1", description:"small people. violent sports.",
-  photo:"img/friendship.jpg", mailingList:["generous@bye.com"],	contactEmail:"hello@bye.com", sports:"Rugby", members:[person1,person2]};
+var team2 = new Team("Dancing Queens", (15,18), "N", 3, person4,
+	5, "recplace", "sparkley", "teamsportz.jpg", mailing2_ls,
+	"img/friendship.jpg", sports_ls, membership2_ls);
+
+var membership_ls = [person1,person2];
+var membership2_ls = [person3,person4, person5];
+
+		
+var req1 = new Request(666, "14-06-2014", 0, mailing2_ls, "Kool Guy");
+var req2 = new Request(40, "30-08-2014", 0,  mailing_ls, "Mr. Man");
+
 
 person1.teams.push(team1);
 person2.teams.push(team1);
-
-var person3 = {name:"C", age:15, gender:"M", income:3.50, sportsInterests:["Basketball"], 
-	photo:"img/D.jpg", description:"nice guy", isManager:0, teams:[], email:"C@bye.com", phone:"4152232211",
-	ls_requests};
-
-var person4 = {name:"D", age:16, gender:"F", income:3.50, sportsInterests:["Basketball"], 
-	photo:"img/D.jpg", description:"kool guy", isManager:1, teams:[], email:"D@bye.com", phone:"1111111111",
-	ls_requests};
-
-var person5 = {name:"E", age:16, gender:"M", income:3.50, sportsInterests:["Basketball"], 
-	photo:"img/D.jpg", description:"dude guy", isManager:0, teams:[], email:"E@bye.com", phone:"2222222222",
-	ls_requests};
-
-var person6 = {name:"F", age:18, gender:"M", income:3.50, sportsInterests:["Basketball"], 
-	photo:"img/D.jpg", description:"hi guy", isManager:0, teams:[], email:"F@bye.com", phone:"3333333333",
-	ls_requests};
-
-
-var team2 = {teamName:"Dancing Queens", ageRange:(15,18), gender:"N", maxEnrollment:3, teamManager:person4,
-	minEntryFee:5, homeRec:"recplace", description:"sparkley", photo:"teamsportz.jpg", mailingList:["cashmoney@bye.com"],
-	contactEmail:"img/friendship.jpg", sports:["Dance","Gymnastics"], members:[person3, person4, person5]};
-		
 person3.teams.push(team2);
 person4.teams.push(team2);
 person5.teams.push(team2);
 
-var req1 = {666, "14-06-2014", 0, ["cashmoney@bye.com"], "Kool Guy"};
-var req2 = {40, "30-08-2014", 0, ["generous@bye.com"], "Mr. Man"};
+
+PEOPLE.push(person1);
+PEOPLE.push(person2);
+PEOPLE.push(person3);
+PEOPLE.push(person4);
+PEOPLE.push(person5);
+PEOPLE.push(person6);
+
+TEAMS.push(team1);
+TEAMS.push(team2);
