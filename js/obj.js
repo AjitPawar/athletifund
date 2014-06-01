@@ -119,41 +119,44 @@ function search(searchText) {
 	}
 
 
-var person1 = {name:"A", age:10, gender:"F", income:3.50, sportsInterests:["Basketball", "Rugby"], 
-	photo:"/img/D.jpg", description:"I'm some girl", isManager:0, teams=[], email:"hi@bye.com", phone:"4152232211",
-	requests:[]};
+var ls_teams = [];
+var ls_requests = [];
+
+
+var person1 = {name:"A", age:10, gender:"F", income:3.50, sportsInterests:["Basketball", "Rugby"], photo:"img/D.jpg", description:"I'm some girl", 
+	isManager:0, teams:ls_teams, email:"hi@bye.com", phone:"4152232211", requests:ls_requests};
 
 var person2 = {name:"B", age:12, gender:"F", income:1000, sportsInterests:["Dance", "Rugby"], 
-	photo:"/img/D.jpg", description:"I'm some girl also", isManager:1, teams=[], email:"hello@bye.com", phone:"1231231233",
-	requests:[]};
+	photo:"img/D.jpg", description:"I'm some girl also", isManager:1, ls_teams, email:"hello@bye.com", phone:"1231231233",
+	ls_requests};
 
 var team1 = {teamName:"Preteen Girls' Rugby", ageRange:(9,13), gender:"F", maxEnrollment:25,
  teamManager:person2, minEntryFee:25, homeRec:"recreationcentre1", description:"small people. violent sports.",
-  photo:"/img/friendship.jpg", mailingList:["generous@bye.com"],	contactEmail:"hello@bye.com", sports:"Rugby", members:[person1,person2]};
+  photo:"img/friendship.jpg", mailingList:["generous@bye.com"],	contactEmail:"hello@bye.com", sports:"Rugby", members:[person1,person2]};
 
 person1.teams.push(team1);
 person2.teams.push(team1);
 
 var person3 = {name:"C", age:15, gender:"M", income:3.50, sportsInterests:["Basketball"], 
-	photo:"/img/D.jpg", description:"nice guy", isManager:0, teams:[], email:"C@bye.com", phone:"4152232211",
-	requests:[]};
+	photo:"img/D.jpg", description:"nice guy", isManager:0, teams:[], email:"C@bye.com", phone:"4152232211",
+	ls_requests};
 
 var person4 = {name:"D", age:16, gender:"F", income:3.50, sportsInterests:["Basketball"], 
-	photo:"/img/D.jpg", description:"kool guy", isManager:1, teams:[], email:"D@bye.com", phone:"1111111111",
-	requests:[]};
+	photo:"img/D.jpg", description:"kool guy", isManager:1, teams:[], email:"D@bye.com", phone:"1111111111",
+	ls_requests};
 
 var person5 = {name:"E", age:16, gender:"M", income:3.50, sportsInterests:["Basketball"], 
-	photo:"/img/D.jpg", description:"dude guy", isManager:0, teams:[], email:"E@bye.com", phone:"2222222222",
-	requests:[]};
+	photo:"img/D.jpg", description:"dude guy", isManager:0, teams:[], email:"E@bye.com", phone:"2222222222",
+	ls_requests};
 
 var person6 = {name:"F", age:18, gender:"M", income:3.50, sportsInterests:["Basketball"], 
-	photo:"/img/D.jpg", description:"hi guy", isManager:0, teams:[], email:"F@bye.com", phone:"3333333333",
-	requests:[]};
+	photo:"img/D.jpg", description:"hi guy", isManager:0, teams:[], email:"F@bye.com", phone:"3333333333",
+	ls_requests};
 
 
 var team2 = {teamName:"Dancing Queens", ageRange:(15,18), gender:"N", maxEnrollment:3, teamManager:person4,
 	minEntryFee:5, homeRec:"recplace", description:"sparkley", photo:"teamsportz.jpg", mailingList:["cashmoney@bye.com"],
-	contactEmail:"/img/friendship.jpg", sports:["Dance","Gymnastics"], members:[person3, person4, person5]};
+	contactEmail:"img/friendship.jpg", sports:["Dance","Gymnastics"], members:[person3, person4, person5]};
 		
 person3.teams.push(team2);
 person4.teams.push(team2);
