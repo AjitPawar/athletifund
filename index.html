@@ -181,18 +181,17 @@
       </div>
       <div class="modal-body">
     
-
     <!-- start of dialog-form -->
     <div id="dialog-form" title="Create new user">
     <form>
-		  <fieldset>
+		 <fieldset style="text-align:right;">
 		    <label for="name">Name</label>
 		    <input type="text" name="name" id="name" class="text ui-widget-content ui-corner-all"><br>
 		    <label for="age">Age</label>
 		    <input type="text" name="age" id="age" class="text ui-widget-content ui-corner-all"><br>
 		    <label for="gender">Gender</label>
 		    <input type="text" name="gender" id="gender" class="text ui-widget-content ui-corner-all"><br>
-		    <label for="zipcode">zipcode</label>
+		    <label for="zipcode">Postal code</label>
 		    <input type="text" name="zipcode" id="zipcode" class="text ui-widget-content ui-corner-all"><br>
 		    <label for="income">Income</label>
 		    <input type="text" name="income" id="income" class="text ui-widget-content ui-corner-all"><br>
@@ -202,9 +201,9 @@
 		    <input type="text" name="email" id="email" class="text ui-widget-content ui-corner-all"><br>
 		    <label for="phone">Phone</label>
 		    <input type="text" name="phone" id="phone" class="text ui-widget-content ui-corner-all"><br>
-
-
+		    <br>
 		    Create new team? <input class="messageCheckbox" type="checkbox" id="checkbox" />
+		    <br>
 		    <script>
 		      $("#checkbox").click( function(){
 		         if( $(this).is(':checked')){
@@ -222,7 +221,7 @@
 		    <input type="text" id="newTeam" name="newTeam" class="text ui-widget-content ui-corner-all" style="display:none">
 
 		    <div id="dd1">
-		    What sport are you interested in?
+		    Which sports are you interested in?
 		    <select id="interests">
 		      <option></option>
 		      <script>
