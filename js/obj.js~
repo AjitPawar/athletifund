@@ -13,7 +13,7 @@ function Zipcode(lat, lon){
 
 
 function Person(name, age, gender, zipcode, income, sportsInterests, photo,
-	description, isManager, email, phone, requests) {
+	description, isManager, email, phone, requests, need) {
 	this.name = name;
 	this.age = age;
 	this.gender = gender; //M, F, N
@@ -32,7 +32,8 @@ function Person(name, age, gender, zipcode, income, sportsInterests, photo,
 	}
 
 	
-function Request(amount, endDate, isFunded, mailingList, donorList) {
+function Request(requester, amount, endDate, isFunded, mailingList, donorList) {
+	this.requester = requester;
 	this.amount = amount;
 	this.sofar = 0;
 	this.endDate = endDate;
@@ -56,6 +57,7 @@ function Team(teamName, ageRange, gender, maxEnrollment, teamManager, minEntryFe
 	this.contactEmail = contactEmail; //email of teamManager
 	this.sports = sports; //list of keywords from SPORTLIST
 	this.members = []; //list of Person objects
+	this.requests = [];
 	}
 
 function addMember(team, newMember) {
@@ -217,7 +219,6 @@ PEOPLE.push(person2);
 PEOPLE.push(person3);
 PEOPLE.push(person4);
 PEOPLE.push(person5);
-PEOPLE.push(person6);
 
 TEAMS.push(team1);
 TEAMS.push(team2);

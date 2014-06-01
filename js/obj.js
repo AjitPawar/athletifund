@@ -13,7 +13,7 @@ function Zipcode(lat, lon){
 
 
 function Person(name, age, gender, zipcode, income, sportsInterests, photo,
-	description, isManager, email, phone, requests) {
+	description, isManager, email, phone, requests, need) {
 	this.name = name;
 	this.age = age;
 	this.gender = gender; //M, F, N
@@ -29,6 +29,7 @@ function Person(name, age, gender, zipcode, income, sportsInterests, photo,
 	this.requests = requests; //list of Request objects
 	this.amount = 0;
 	this.amountNeed = 0;
+	this.need = need
 	}
 
 	
