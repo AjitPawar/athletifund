@@ -29,7 +29,6 @@ function Person(name, age, gender, zipcode, income, sportsInterests, photo,
 	this.requests = requests; //list of Request objects
 	this.amount = 0;
 	this.amountNeed = 0;
-	this.need = need
 	}
 
 	
