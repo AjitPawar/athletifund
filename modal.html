@@ -6,8 +6,7 @@
   <link rel="stylesheet" href="css/jquery-ui.css">
   <script src="js/jquery-1.10.2.js"></script>
   <script src="js/jquery-ui.js"></script>
-
-  <!--<script src="js/obj.js"></script>-->
+  <script src="js/obj.js"></script>
    
   <style>
     body { font-size: 62.5%; }
@@ -25,10 +24,19 @@
   <script>
   $(function() {
     var name = $( "#name" ),
+      age = $( "#age" ),
+      gender = $( "#gender" ),
+      address = $( "#address" ),
+      income = $( "#income" ),
+      description = $( "#description" ),
+      isManager = $( "#isManager" ),
       email = $( "#email" ),
-      password = $( "#password" ),
-      allFields = $( [] ).add( name ).add( email ).add( password ),
-      tips = $( ".validateTips" );
+      phone = $( "#phone" ),
+      isManager = $(".messageCheckbox").is(":checked"),
+      interests = $('#interests :selected').text(),
+      teams = $('#teams :selected').text();
+      //allFields = $( [] ).add( name ).add( email ).add( password ),
+      //tips = $( ".validateTips" );
  
     function updateTips( t ) {
       tips
@@ -67,8 +75,8 @@
       modal: true,
       buttons: {
         "Create an account": function() {
-            
-
+          
+          
 
         },
         Cancel: function() {
@@ -76,7 +84,7 @@
         }
       },
       close: function() {
-        allFields.val( "" ).removeClass( "ui-state-error" );
+        //allFields.val( "" ).removeClass( "ui-state-error" );
       }
     });
  
@@ -91,7 +99,6 @@
 <body>
  
 <div id="dialog-form" title="Create new user">
-  <p class="validateTips">Enter your details below</p>
  
   <form>
   <fieldset>
@@ -113,47 +120,33 @@
     <input type="text" name="email" id="email" class="text ui-widget-content ui-corner-all">
     <label for="phone">Phone</label>
     <input type="text" name="phone" id="phone" class="text ui-widget-content ui-corner-all">
-    <label for="requests">Requests</label>
-    <input type="text" name="requests" id="requests" class="text ui-widget-content ui-corner-all">
+
 
     <label for="isManager">Are you a manager?</label>
-    <input type="checkbox" name="isManager" value="Bike"><br>
+    <input class="messageCheckbox" type="checkbox" name="isManager" value="0"><br>
 
-    <label for="dd1">What sport are you interested in?</label>
-    <select name="dd1">
+    <select id="interests">
+      <option>What sport are you interested in?</option>
+      <script>
+          for(i=0; i<SPORTLIST.length; i++) {  
+              document.write('<option value="' + SPORTLIST[i] +'">' + SPORTLIST[i] + '</option>');
+          }
+      </script>
     </select><br>
 
-    <label for="dd2">Select your team</label>
-    <select name="dd2">
-    </select>
-
-<select id="selectNumber">
-    <option>Choose a number</option>
-    <script>
-        var myArray = new Array("1", "2", "3", "4", "5" . . . . . "N");
-        for(i=0; i<myArray.length; i++) {  
-            document.write('<option value="' + myArray[i] +'">' + myArray[i] + '</option>');
-        }
-    </script>
-</select>
+    <select id="teams">
+      <option>What team would you like to join?</option>
+      <script>
+          for(i=0; i<TEAMS.length; i++) {  
+              document.write('<option value="' + TEAMS[i].teamName +'">' + TEAMS[i].teamName + '</option>');
+          }
+      </script>
+    </select><br>
 
   </fieldset>
   </form>
 
 </div>
- 
-<script>/*
-var dd1 = document.getElementById("dd1");
-var options = ["1", "2", "3", "4", "5"];
-for(var i = 0; i < options.length; i++) {
-    var opt = options[i];
-    var el = document.createElement("option");
-    el.textContent = opt;
-    el.value = opt;
-    dd1.appendChild(el);
-}
-*/
-</script>
 
 
 <button id="create-user">Create new user</button>
