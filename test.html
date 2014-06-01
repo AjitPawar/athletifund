@@ -2,7 +2,7 @@
  
 <html>
 <head>
-    <title>Athletifun</title>
+    <title>Sheilla Sucks</title>
     <script src="js/jquery-1.11.1.min.js"></script>
     <script src="js/obj.js"></script>
     <style>
@@ -87,7 +87,7 @@
 
 
 <div class="navbar navbar-custom navbar-fixed-top">
- <div class="navbar-header"><a class="navbar-brand" href="#" style="font-family: 'Montserrat', sans-serif;" data-launch-view="mainPage" onclick="beforeMainPage()">AthletifundAthletifund</a>
+ <div class="navbar-header"><a class="navbar-brand" href="#" style="font-family: 'Montserrat', sans-serif;" data-launch-view="mainPage" onclick="beforeMainPage()">Athletifund</a>
       <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -96,7 +96,7 @@
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li><a href="#">Sponsor</a></li>
+        <li><a href="#" data-toggle="modal" data-target="#myModal2">Sponsor</a></li>
         <li><a href="#" data-toggle="modal" data-target="#myModal">Sign Up</a></li>
         
         <li>&nbsp;</li>
@@ -191,22 +191,40 @@
     <div id="dialog-form" title="Create new user">
     <form>
 		  <fieldset>
-		    <label for="name">Name</label>
-		    <input type="text" name="name" id="name" class="text ui-widget-content ui-corner-all"><br>
-		    <label for="age">Age</label>
-		    <input type="text" name="age" id="age" class="text ui-widget-content ui-corner-all"><br>
-		    <label for="gender">Gender</label>
-		    <input type="text" name="gender" id="gender" class="text ui-widget-content ui-corner-all"><br>
-		    <label for="zipcode">zipcode</label>
-		    <input type="text" name="zipcode" id="zipcode" class="text ui-widget-content ui-corner-all"><br>
-		    <label for="income">Income</label>
-		    <input type="text" name="income" id="income" class="text ui-widget-content ui-corner-all"><br>
-		    <label for="description">Description</label>
-		    <input type="text" name="description" id="description" class="text ui-widget-content ui-corner-all"><br>
-		    <label for="email">Email</label>
-		    <input type="text" name="email" id="email" class="text ui-widget-content ui-corner-all"><br>
-		    <label for="phone">Phone</label>
-		    <input type="text" name="phone" id="phone" class="text ui-widget-content ui-corner-all"><br>
+			  <table>
+					<tr>
+						<td><label for="name">Name</label></td>
+						<td><input type="text" name="name" id="name" class="text ui-widget-content ui-corner-all"><br></td>
+					</tr>
+					<tr>
+						<td><label for="age">Age</label></td>
+						<td><input type="text" name="age" id="age" class="text ui-widget-content ui-corner-all"><br></td>
+					</tr>
+					<tr>
+						<td><label for="gender">Gender</label></td>
+						<td><input type="text" name="gender" id="gender" class="text ui-widget-content ui-corner-all"><br></td>
+					</tr>
+					<tr>
+						<td><label for="zipcode">zipcode</label></td>
+						<td><input type="text" name="zipcode" id="zipcode" class="text ui-widget-content ui-corner-all"><br></td>
+					</tr>
+					<tr>
+						<td><label for="income">Income</label></td>
+						<td><input type="text" name="income" id="income" class="text ui-widget-content ui-corner-all"><br></td>
+					</tr>
+					<tr>
+						<td><label for="description">Description</label></td>
+						<td><input type="text" name="description" id="description" class="text ui-widget-content ui-corner-all"><br></td>
+					</tr>
+					<tr>
+						<td><label for="email">Email</label></td>
+						<td><input type="text" name="email" id="email" class="text ui-widget-content ui-corner-all"><br></td>
+					</tr>
+					<tr>
+						<td><label for="phone">Phone</label></td>
+						<td><input type="text" name="phone" id="phone" class="text ui-widget-content ui-corner-all"><br></td>
+					</tr>
+				</table>
 
 
 		    Create new team? <input class="messageCheckbox" type="checkbox" id="checkbox" />
@@ -264,7 +282,53 @@
 
     </div>
     <!-- end of dialog-form -->
+    
+    <!-- Modal2 -->
 
+  </div>
+</div>
+
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel" align: "center">Sponsor</h4>
+      </div>
+      <div class="modal-body">
+    
+    <!-- start of dialog-form -->
+    <div id="dialog-form" title="Create new user">
+    <form>
+      <fieldset>
+		<table>
+			<tr>
+				<td><label for="name">Name</label></td>
+				<td><input type="text" name="name" id="name" class="text ui-widget-content ui-corner-all"><br></td>
+			</tr>
+			<tr>
+				<td><label for="age">Age</label></td>
+				<td><input type="text" name="description" id="description" class="text ui-widget-content ui-corner-all"><br></td>
+			</tr>
+			<tr>
+				<td><label for="email">Email</label></td>
+				<td><input type="text" name="email" id="email" class="text ui-widget-content ui-corner-all"><br></td>
+			</tr>
+			<tr>
+				<td><label for="phone">Phone</label></td>
+				<td><input type="text" name="phone" id="phone" class="text ui-widget-content ui-corner-all"><br></td>
+			</tr>
+        </table>
+      </fieldset>
+      </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" onclick="return doModal();">Submit</button>
+      </div>
+    </div>
+    </div>
+    <!-- end of dialog-form -->
   </div>
 </div>
 
