@@ -46,7 +46,9 @@
         <div class="form-group" style="display:inline;">
           <div class="input-group">
             <div class="input-group-btn">
+<!--
               <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-chevron-down"></span></button>
+-->
               <ul class="dropdown-menu">
                 <li><a href="#">Basketball</a></li>
                 <li><a href="#">Hockey</a></li>
@@ -55,7 +57,7 @@
               </ul>
             </div>
             <div id="the-basics">
-            <input class="typeahead form-control" type="text" placeholder="States of USA">
+            <input class="typeahead form-control" type="text" placeholder="States of USA" style="float: right;">
             </div>
             <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span> </span>
           </div>
@@ -174,7 +176,7 @@
 		<script src="js/bootstrap.min.js"></script>
 		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
 		<script src="js/scripts.js"></script>
-    <script src="js/typeahead.bundle.js"></script>
+		<script src="js/typeahead.bundle.js"></script>
 		<script src="js/jquery.newsTicker.min.js"></script>
 
 		<script>
@@ -193,7 +195,8 @@
       $('#the-basics .typeahead').typeahead({
         hint: true,
         highlight: true,
-        minLength: 1
+        minLength: 1,
+        float: right,
       },
       {
         name: 'states',

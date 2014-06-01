@@ -177,7 +177,7 @@ html,body,#map-canvas {
     height: 30px;
     line-height: 30px;
     outline: medium none;
-    padding: 8px 12px;
+    padding: 2px 12px;
     width: 396px;
 }
 .typeahead {
